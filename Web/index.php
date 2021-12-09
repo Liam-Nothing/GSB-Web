@@ -28,7 +28,7 @@
 		<main>
 			<section id="main">
 				<div>
-					<img class="logo_leaf" src="img/logo.png">
+					<img class="logo_leaf" src="img/logogsb.png">
 				</div>
 			</section>
 			
