@@ -13,7 +13,7 @@
 
         if (!empty($rows)) {
             echo "\n<br/>"."ADD DB State"."\n<br/>";
-            $new_database->query("ALTER TABLE `state` AUTO_INCREMENT=1");
+            $new_database->query("ALTER TABLE `state` AUTO_INCREMENT=0");
             $new_database->query('SET foreign_key_checks = 0');
             foreach($rows as $row) {
 
@@ -43,7 +43,7 @@
 
         if (!empty($rows)) {
             echo "\n<br/>"."ADD DB Standard fee"."\n<br/>";
-            $new_database->query("ALTER TABLE `standard_fee` AUTO_INCREMENT=1");
+            $new_database->query("ALTER TABLE `standard_fee` AUTO_INCREMENT=0");
             $new_database->query('SET foreign_key_checks = 0');
             foreach($rows as $row) {
                 $sqlr = $new_database->prepare("
@@ -73,7 +73,7 @@
 
         if (!empty($rows)) {
             echo "\n<br/>"."ADD DB Users"."\n<br/>";
-            $new_database->query("ALTER TABLE `users` AUTO_INCREMENT=1");
+            $new_database->query("ALTER TABLE `users` AUTO_INCREMENT=0");
             $new_database->query('SET foreign_key_checks = 0');
             foreach($rows as $row) {
                 $sqlr = $new_database->prepare("

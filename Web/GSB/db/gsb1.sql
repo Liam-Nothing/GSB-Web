@@ -29,14 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `fee_sheet` (
   `id` int(11) NOT NULL,
-  `description` varchar(500) NOT NULL DEFAULT '0',
+  `description` varchar(500) DEFAULT NULL,
   `fee` decimal(5,2) NOT NULL,
   `add_date` datetime NOT NULL DEFAULT current_timestamp(),
   `use_date` datetime NOT NULL DEFAULT current_timestamp(),
   `state` int(3) NOT NULL DEFAULT 0,
   `id_user` int(11) NOT NULL,
   `standard_fee` int(11) NOT NULL,
-  `url_pict` varchar(50) NOT NULL DEFAULT '0'
+  `url_pict` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -47,7 +47,7 @@ CREATE TABLE `fee_sheet` (
 
 CREATE TABLE `role` (
   `id` int(11) NOT NULL,
-  `label` varchar(50) NOT NULL DEFAULT '0'
+  `label` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
