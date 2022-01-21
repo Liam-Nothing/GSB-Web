@@ -1,6 +1,6 @@
 <?php
 
-    require("includes/func_util.php");
+    require("../includes/func_util.php");
 
     $old_database = connectDB("old_gsb", $config);
     $new_database = connectDB("gsb", $config);
