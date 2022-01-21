@@ -41,6 +41,8 @@
             if (!empty($sqlr_rows)) {
                 if(password_verify($post_data["password"], $sqlr_rows[0]["password"])){
                     $return_data = "Good password";
+                    session_start();
+                    $_SESSION["id"] = $sqlr_rows[0]["id"];
                 }else{
                     $return_data = "Bad password";
                 }
