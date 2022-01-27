@@ -5,7 +5,7 @@
     session_start();
     
     if(isset($_SESSION["id"])){
-        $return_data = "You are logged on : ".$_SESSION["id"];
+        $return_data = "You are logged on : ".$_SESSION["username"];
     }else{
         $return_data = "You are not logged";
     }

@@ -10,7 +10,6 @@ $database = connectDB("gsb", $config);
 $error = false;
 
 if(isset($_SESSION["id"])){
-    $return_data = "You are logged on : ".$_SESSION["id"];
 
     $sqlr = $database->prepare("SELECT * FROM `fee_sheet` WHERE id_user = :id_user");
     $sqlr->bindParam(':id_user', $_SESSION["id"]);
