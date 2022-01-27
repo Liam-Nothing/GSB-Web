@@ -38,7 +38,7 @@
             $post_data = post_security($post_data);
 
             if(!$error){
-                $sqlr = $database->prepare("SELECT `username`, `password`, `id` FROM users WHERE username = :username");
+                $sqlr = $database->prepare("SELECT `username`, `password`, `id`, `id_role` FROM users WHERE username = :username");
                 $sqlr->bindParam(':username', $post_data["username"]);
                 $sqlr->execute();
                 $sqlr_rows = $sqlr->fetchAll();
@@ -47,6 +47,8 @@
                     if(password_verify($post_data["password"], $sqlr_rows[0]["password"])){
                         $return_data = "Good password";
                         $_SESSION["id"] = $sqlr_rows[0]["id"];
+                        $_SESSION["username"] = $sqlr_rows[0]["username"];
+                        $_SESSION["id_role"] = $sqlr_rows[0]["id_role"];
                     }else{
                         $return_data = "Bad password";
                     }

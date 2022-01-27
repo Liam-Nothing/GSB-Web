@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <style>table td + td, table th + th { border-left:2px solid black; }</style>
+    <title>API</title>
+    <style>
+        table td + td, table th + th { border-left:2px solid black; }
+        table {text-align: center;border:2px solid black;}
+    </style>
 </head>
 <body>
-    <h1>Password API</h1>
+    <h1>API</h1>
     <p>You can try : lvillachane | jux7g</p>
     <form action="" method="post">
         <input type="text" name="username" id="username">
@@ -16,12 +19,13 @@
         <input type="button" value="Logout" onclick="getLogout()">
         <input type="button" value="TestLog" onclick="getIfImLog()">
         <input type="button" value="FeeSheets" onclick="getFeeSheet()">
+        <input type="button" value="Admin all feeSheets" onclick="getFeeSheet_Admin()">
     </form>
-    <table id="feesheet" style="border: 1px solid black;text-align: center;">
+    <table id="feesheet">
         <tr>
             <th>id</th>
             <th>use_date</th>
-            <th style="/*max-width: 30%;*/">description</th>
+            <th>description</th>
             <th>add_date</th>
             <th>state</th>
             <th>id_user</th>
@@ -29,7 +33,7 @@
             <th>url_pict</th>
         </tr>
     </table>
-    <textarea style="width: 100%;height: 500px;" id="rep"></textarea>
+    <textarea style="width: 100%;height: 200px;" id="rep"></textarea>
 
     <script>
         function RequestAPI(url, data, feesheet){
@@ -88,6 +92,13 @@
 
         function getFeeSheet(){
             let url = "api_get_feesheet.php";
+            let data = "";
+
+            RequestAPI(url, data, 1);
+        }
+
+        function getFeeSheet_Admin(){
+            let url = "api_admin_get_feesheet.php";
             let data = "";
 
             RequestAPI(url, data, 1);
