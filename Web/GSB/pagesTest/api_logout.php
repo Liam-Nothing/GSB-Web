@@ -1,8 +1,8 @@
 <?php
     
     header('Content-Type: application/json');
-
     session_start();
+    require_once("../includes/func_util.php");
 
     if(isset($_SESSION["id"])){
 
@@ -16,10 +16,16 @@
     
         session_destroy();
 
-        $return_data = "Session is destroy";
+        $return_data = [
+            "id" => 1,
+            "message" => "Session is destroy"
+        ];
 
     }else{
-        $return_data = "You are not logged";
+        $return_data = [
+            "id" => 2,
+            "message" => "You are not logged"
+        ];
     }
 
     echo json_encode($return_data);
