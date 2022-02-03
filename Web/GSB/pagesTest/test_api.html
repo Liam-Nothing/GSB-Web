@@ -34,7 +34,13 @@
         </tr>
     </table>
     <textarea style="width: 100%;height: 200px;" id="rep"></textarea>
-
+    <input type="number" name="fee" id="fee" placeholder="fee">
+    <input type="date" name="use_date" id="use_date" placeholder="use_date">
+    <input type="text" name="description" id="description" placeholder="description">
+    <input type="number" name="standard_fee" id="standard_fee" placeholder="standard_fee">
+    <input type="button" value="Envoyer la fiche de frais" onclick="SendFeeSheet()">
+    <br>
+    <input type="button" value="Test API" onclick="TestAPI()">
     <script>
         function RequestAPI(url, data, feesheet){
             let xhr = new XMLHttpRequest();
@@ -45,21 +51,27 @@
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     let json = JSON.parse(xhr.responseText);
                     console.log(json);
-                    if(feesheet){
-                        json.forEach(element => {
-                            var table = document.getElementById("feesheet");
-                            var row = table.insertRow(1);
-                            row.insertCell(0).innerHTML = element["id"];
-                            row.insertCell(1).innerHTML = element["use_date"];
-                            row.insertCell(2).innerHTML = element["description"];
-                            row.insertCell(3).innerHTML = element["add_date"];
-                            row.insertCell(4).innerHTML = element["state"];
-                            row.insertCell(5).innerHTML = element["id_user"];
-                            row.insertCell(6).innerHTML = element["standard_fee"];
-                            row.insertCell(7).innerHTML = element["url_pict"];
-                        });
+                    if(json["id"]===1){
+                        document.getElementById("rep").value = "[OK]" + new Date().toLocaleTimeString() + " " + json["message"] + "\n" + document.getElementById("rep").value;
                     }else{
-                        document.getElementById("rep").value = new Date().toLocaleTimeString() + " " + json + "\n" + document.getElementById("rep").value;
+                        document.getElementById("rep").value = "[Err]" + new Date().toLocaleTimeString() + " " + json["message"] + "\n" + document.getElementById("rep").value;
+                    }
+                    if(feesheet){
+                        delete json["id"];
+                        delete json["message"];
+                        console.log(json);
+                        for (const [key, value] of Object.entries(json)) {
+                            var table = document.getElementById("feesheet");
+                            var row = table.insertRow(1)
+                            row.insertCell(0).innerHTML = value["id"];
+                            row.insertCell(1).innerHTML = value["use_date"];
+                            row.insertCell(2).innerHTML = value["description"];
+                            row.insertCell(3).innerHTML = value["add_date"];
+                            row.insertCell(4).innerHTML = value["state"];
+                            row.insertCell(5).innerHTML = value["id_user"];
+                            row.insertCell(6).innerHTML = value["standard_fee"];
+                            row.insertCell(7).innerHTML = value["url_pict"];
+                        }
                     }
                 }
             };
@@ -72,6 +84,18 @@
             let password = document.getElementById("password").value;
             let url = "api_password_verify.php";
             let data = JSON.stringify({"username": username, "password": password});
+
+            RequestAPI(url, data, 0);
+        }
+
+
+        function SendFeeSheet(){
+            let fee = document.getElementById("fee").value;
+            let use_date = document.getElementById("use_date").value;
+            let description = document.getElementById("description").value;
+            let standard_fee = document.getElementById("standard_fee").value;
+            let url = "api_add_feesheet.php";
+            let data = JSON.stringify({"fee": fee, "use_date": use_date, "description": description, "standard_fee": standard_fee});
 
             RequestAPI(url, data, 0);
         }
@@ -102,6 +126,13 @@
             let data = "";
 
             RequestAPI(url, data, 1);
+        }
+
+        function TestAPI(){
+            let url = "api.php";
+            let data = JSON.stringify({"api": "2"});
+
+            RequestAPI(url, data, 0);
         }
     </script>
 </body>
