@@ -1,29 +1,6 @@
 <?php
 
-    header('Content-Type: application/json');
-    session_start();
-    require_once("../includes/func_util.php");
-    $database = connectDB("gsb", $config);
-    $post_json_data = (array) json_decode(stripslashes(file_get_contents("php://input")));
-
-    function post_security($arrays) {
-        global $post_json_data;
-        global $return_data;
-        global $error;
-
-        $array_return = array();
-        foreach ($arrays as $array) {
-            $variable_name = $array[0];
-            $max_leght = $array[1];
-            if (isset($post_json_data[$variable_name]) and strlen($post_json_data[$variable_name]) <= $max_leght and strlen($post_json_data[$variable_name]) >= 3 and !empty($post_json_data[$variable_name])) {
-                $array_return[$variable_name] = htmlspecialchars($post_json_data[$variable_name]);
-            }else{
-                // $return_data = "{$variable_name} doit faire un maximume de {$max_leght} charactères et un minimum de 3 charactères.";
-                $error = true;
-            }
-        }
-        return $array_return;
-    }
+    require_once("../includes/main.db.php");
 
     if(isset($_SESSION["id"])){
         if($_SESSION["id_role"] == 3){
