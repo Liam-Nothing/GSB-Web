@@ -40,7 +40,13 @@
     <input type="number" name="standard_fee" id="standard_fee" placeholder="standard_fee">
     <input type="button" value="Envoyer la fiche de frais" onclick="SendFeeSheet()">
     <br>
-    <input type="button" value="Test API" onclick="TestAPI()">
+    <input type="number" name="fee_add" id="fee_add" placeholder="fee">
+    <input type="text" name="label" id="label" placeholder="label">
+    <input type="button" value="Ajouter un frai standard" onclick="AddStandardsFees()">
+    <br>
+    <input type="number" name="standard_id" id="standard_id" placeholder="standard_id">
+    <input type="button" value="Remove standard_id" onclick="RemoveStandardsFees()">
+    <br>
     <script>
         function RequestAPI(url, data, feesheet){
             let xhr = new XMLHttpRequest();
@@ -82,8 +88,27 @@
         function getAuth(){
             let username = document.getElementById("username").value;
             let password = document.getElementById("password").value;
-            let url = "api_password_verify.php";
+            let url = "api/users/api_session_open.php";
             let data = JSON.stringify({"username": username, "password": password});
+
+            RequestAPI(url, data, 0);
+        }
+
+
+        function AddStandardsFees(){
+            let label = document.getElementById("label").value;
+            let fee_add = document.getElementById("fee_add").value;
+            let url = "api/standard_fees/api_add_standards_fees.php";
+            let data = JSON.stringify({"label": label, "fee_add": fee_add});
+
+            RequestAPI(url, data, 0);
+        }
+
+
+        function RemoveStandardsFees(){
+            let standard_id = document.getElementById("standard_id").value;
+            let url = "api/standard_fees/api_remove_standards_fees.php";
+            let data = JSON.stringify({"standard_id": standard_id});
 
             RequestAPI(url, data, 0);
         }
@@ -94,45 +119,38 @@
             let use_date = document.getElementById("use_date").value;
             let description = document.getElementById("description").value;
             let standard_fee = document.getElementById("standard_fee").value;
-            let url = "api_add_feesheet.php";
+            let url = "api/feesheets/api_add_feesheet.php";
             let data = JSON.stringify({"fee": fee, "use_date": use_date, "description": description, "standard_fee": standard_fee});
 
             RequestAPI(url, data, 0);
         }
 
         function getLogout(){
-            let url = "api_logout.php";
+            let url = "api/users/api_logout.php";
             let data = "";
 
             RequestAPI(url, data, 0);
         }
 
         function getIfImLog(){
-            let url = "api_logged.php";
+            let url = "api/users/api_logged.php";
             let data = "";
 
             RequestAPI(url, data, 0);
         }
 
         function getFeeSheet(){
-            let url = "api_get_feesheet.php";
+            let url = "api/feesheets/api_get_feesheet.php";
             let data = "";
 
             RequestAPI(url, data, 1);
         }
 
         function getFeeSheet_Admin(){
-            let url = "api_admin_get_feesheet.php";
+            let url = "api/feesheets/api_admin_get_feesheet.php";
             let data = "";
 
             RequestAPI(url, data, 1);
-        }
-
-        function TestAPI(){
-            let url = "api.php";
-            let data = JSON.stringify({"api": "2"});
-
-            RequestAPI(url, data, 0);
         }
     </script>
 </body>

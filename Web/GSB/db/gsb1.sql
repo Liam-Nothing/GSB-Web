@@ -129,8 +129,7 @@ ALTER TABLE `role`
 -- Index pour la table `standard_fee`
 --
 ALTER TABLE `standard_fee`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`label`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `state`
