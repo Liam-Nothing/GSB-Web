@@ -70,7 +70,7 @@ CREATE TABLE `standard_fee` (
   `id` int(11) NOT NULL,
   `label` varchar(50) DEFAULT NULL,
   `fee` decimal(5,2) DEFAULT NULL,
-  `deleted` varchar(1) NOT NULL DEFAULT '0'
+  `deleted` varchar(1) NOT NULL DEFAULT '2'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
