@@ -11,7 +11,8 @@
 </head>
 <body>
     <h1>API</h1>
-    <p>You can try : lvillachane | jux7g</p>
+    <p>You can try : lvillachane | jux7g | Admin</p>
+    <p>You can try : dbunisset | s1y1r | User</p>
     <form action="" method="post">
         <input type="text" name="username" id="username">
         <input type="text" name="password" id="password">
@@ -99,8 +100,8 @@
             let label = document.getElementById("label").value;
             let fee_add = document.getElementById("fee_add").value;
             let url = "api/standard_fees/api_add_standards_fees.php";
-            let data = JSON.stringify({"label": label, "fee_add": fee_add});
-
+            let data = JSON.stringify({"label": label, "fee": fee_add});
+            
             RequestAPI(url, data, 0);
         }
 
