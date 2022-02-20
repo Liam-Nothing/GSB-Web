@@ -19,7 +19,7 @@
         <input type="button" value="Se connecter" onclick="getAuth()">
         <input type="button" value="Logout" onclick="getLogout()">
         <input type="button" value="TestLog" onclick="getIfImLog()">
-        <input type="button" value="FeeSheets" onclick="getFeeSheet()">
+        <input type="button" value="FeeSheets" onclick="getAllFeeSheet()">
         <input type="button" value="Admin all feeSheets" onclick="getFeeSheet_Admin()">
     </form>
     <table id="feesheet">
@@ -39,7 +39,8 @@
     <input type="date" name="use_date" id="use_date" placeholder="use_date">
     <input type="text" name="description" id="description" placeholder="description">
     <input type="number" name="standard_fee" id="standard_fee" placeholder="standard_fee">
-    <input type="button" value="Envoyer la fiche de frais" onclick="SendFeeSheet()">
+    <input type="button" value="Brouillon" onclick="SendFeeSheet(2)">
+    <input type="button" value="Envoyer la fiche de frais" onclick="SendFeeSheet(1)">
     <br>
     <input type="number" name="fee_add" id="fee_add" placeholder="fee">
     <input type="text" name="label" id="label" placeholder="label">
@@ -101,7 +102,7 @@
             let fee_add = document.getElementById("fee_add").value;
             let url = "api/standard_fees/api_add_standards_fees.php";
             let data = JSON.stringify({"label": label, "fee": fee_add});
-            
+
             RequestAPI(url, data, 0);
         }
 
@@ -115,13 +116,13 @@
         }
 
 
-        function SendFeeSheet(){
+        function SendFeeSheet(is_end){
             let fee = document.getElementById("fee").value;
             let use_date = document.getElementById("use_date").value;
             let description = document.getElementById("description").value;
             let standard_fee = document.getElementById("standard_fee").value;
             let url = "api/feesheets/api_add_feesheet.php";
-            let data = JSON.stringify({"fee": fee, "use_date": use_date, "description": description, "standard_fee": standard_fee});
+            let data = JSON.stringify({"fee": fee, "use_date": use_date, "description": description, "standard_fee": standard_fee, "is_end": is_end});
 
             RequestAPI(url, data, 0);
         }
@@ -140,8 +141,8 @@
             RequestAPI(url, data, 0);
         }
 
-        function getFeeSheet(){
-            let url = "api/feesheets/api_get_feesheet.php";
+        function getAllFeeSheet(){
+            let url = "api/feesheets/api_get_all_feesheet.php";
             let data = "";
 
             RequestAPI(url, data, 1);
