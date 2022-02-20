@@ -83,11 +83,11 @@ class DrawerContent extends StatelessWidget {
       children: [
         module(
             page: Principale(),
-            text: 'Mes devis en cours',
+            text: 'Mes notes de frais en cours',
             asset: 'assets/images/pen.json'),
         module(
             page: Principale(),
-            text: 'Créer une note de frais',
+            text: 'Notes de frais archivées',
             asset: 'assets/images/dossier.json'),
       ],
     ));
