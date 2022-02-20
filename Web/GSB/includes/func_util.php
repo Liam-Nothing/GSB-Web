@@ -1,10 +1,19 @@
 <?php
 
     $config = [
-        "host" => "localhost",
-        "dbusername" => "root",
-        "dbpassword" => ""
+        "host" => "nothingefdgsb.mysql.db",
+        "dbusername" => "nothingefdgsb",
+        "dbpassword" => "GSBbest2021"
     ];
+
+    if(in_array($_SERVER['REMOTE_ADDR'], ["127.0.0.1"])){
+        $config = [
+            "host" => "localhost",
+            "dbusername" => "root",
+            "dbpassword" => ""
+        ];
+    }
+
     $return_data = [
         "id" => 0,
         "message" => null
