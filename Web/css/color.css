@@ -1,6 +1,6 @@
 :root {
-    --main-bg-color: #2f6db4;
-    --main-bg-color-dark: #204977;
+    --main-bg-color: #204977;
+    --main-bg-color-dark: #2b63a3;
 }
   
 
@@ -9,11 +9,11 @@
 }
 
 header {
-	background-color: var(--main-bg-color);
+	background-color: transparent;
 }
 
 .progress-bar {
-	background: var(--main-bg-color-dark);
+	background: transparent;
 }
 
 .contact_btn {
@@ -28,6 +28,6 @@ header {
 	border-left: solid var(--main-bg-color);
 }
 
-header a:hover {
+/* header a:hover {
 	background-color: var(--main-bg-color-dark);
-}
+} */
