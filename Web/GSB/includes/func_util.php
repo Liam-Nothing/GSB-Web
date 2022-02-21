@@ -1,10 +1,5 @@
 <?php
-
-    $config = [
-        "host" => "nothingefdgsb.mysql.db",
-        "dbusername" => "nothingefdgsb",
-        "dbpassword" => "GSBbest2021"
-    ];
+    $config = json_decode(file_get_contents(dirname(__FILE__).'/config.json'), true);
 
     if(in_array($_SERVER['REMOTE_ADDR'], ["127.0.0.1"])){
         $config = [
