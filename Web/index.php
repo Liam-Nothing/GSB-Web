@@ -21,11 +21,11 @@
 			<nav>
 				<div>
 					<ul class="at_right" style="position: absolute;width: 97%;">
-						<li class="hide-small"><a href="#">App</a></li>
-						<li class="hide-small"><a href="#">Presation</a></li>
-						<li class="hide-small"><a href="#">Testes</a></li>
-						<li class="hide-small"><a href="#">Acceuil</a></li>
-						<li class="hide-medium hide-large"><a href="#MenuSelect">三</a></li>
+						<li class="hide-small hide-medium"><a href="#">App</a></li>
+						<li class="hide-small hide-medium"><a href="#">Presation</a></li>
+						<li class="hide-small hide-medium"><a href="#">Testes</a></li>
+						<li class="hide-small hide-medium"><a href="#">Acceuil</a></li>
+						<li class="hide-large"><a href="#MenuSelect">三</a></li>
 					</ul>
 				</div>
 				<div>
