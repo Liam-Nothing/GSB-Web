@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="Content-Type" content="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<link rel="stylesheet" type="text/css" href="css/color.css">
 		<link rel="stylesheet" type="text/css" href="css/print.css" media="print">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,21 +17,30 @@
 
 	</head>
 	<body>
-		<header>
+		<header id="header" class="">
 			<nav>
 				<ul>
-					<li><a href="GSB.best">GSB.best</a></li>
-				</ul>
+					<li><a href="GSB.best"><img src="img/logo_top.png" alt="logo top" class="logo_nav"/></a></li>
+				</ul> 
+				<!-- <ul class="at_right" >
+					<li class="hide-small"><a href="/Recrutement">Recrutement</a></li>
+					<li class="hide-medium hide-large"><a href="#MenuSelect">三</a></li>
+				</ul> -->
 			</nav>
 			
-			<div class="progress-container">
+			<!-- <div class="progress-container">
 				<div class="progress-bar" id="myBar"></div>
-			</div>
+			</div> -->
 		</header>
+
+  <script src='https://cldup.com/S6Ptkwu_qA.js'></script>
 		<main>
+		<div id="particles-js"></div>
 			<section id="main">
 				<div>
-					<img class="logo_leaf" src="img/logogsb.png">
+					<h1>Galaxy Swiss Bourdin</h1>
+					<hr>
+					<h2>Laboratory</h2>
 				</div>
 			</section>
 			
