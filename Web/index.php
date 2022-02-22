@@ -66,40 +66,25 @@
 			
 
 			<section id="menu" style="position: relative;">
-				<div class="" name="ne-moving_element">
-					<h2 style="margin-bottom: 30px;">Les liens</h2>
-					<div class="row-resp">
-						<a href="https://github.com/EvannFo/ProjetGSB">
-							<div class="row-element hscale ne-scale" name="ne-moving_element">
-								<img class="image_menu" src="img/GitHub-Logo.png">
-								<h3>GitHub</h3>
+				<div class="grid grid-2">
+					<div>
+						<img class="ne-scale ne-transition" name="ne-moving_element" style="max-width:300px;width:100%;border-radius: 10px;" src="img/hero-medicaments.png" alt="exemple code">
+					</div>
+					<div class="right-transition ne-transition" name="ne-moving_element">
+						<div class="text_left">
+							<h6>Products</h6>
+							<h2>Nos produits</h2>
+							<div class="text_left_border">
+								<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt mauris vitae libero mattis, sed laoreet urna condimentum. Nam eros nibh, dictum eget velit eu, viverra dapibus ex. Quisque efficitur ligula sed orci iaculis, ac viverra nulla tempus. Donec facilisis vel ligula et fermentum. Cras vulputate lacus vitae enim rutrum posuere. Aliquam rutrum eu leo a vestibulum. Nulla tincidunt dui vel feugiat interdum.
+								</p>
 							</div>
-						</a>
-						<a href="https://trello.com/b/jD3VTtFx/gsb-advancement">
-							<div class="row-element hscale ne-scale" name="ne-moving_element">
-								<img class="image_menu" src="img/Trello-Logo.png">
-								<h3>Trello</h3>
+							<div class="btn-container">
+								<button>En savoir plus</button>
 							</div>
-						</a>
-						<a href="https://drive.google.com/drive/folders/1zLw5eI6HpeVAV4q72QA3l2gc45WU4KLA">
-							<div class="row-element hscale ne-scale" name="ne-moving_element">
-								<img class="image_menu" src="img/Google_Drive_logo.png">
-								<h3>Google Drive</h3>
-							</div>
-						</a>
-						<a href="/GSB/">
-							<div class="row-element hscale ne-scale" name="ne-moving_element">
-								<img class="image_menu" src="img/testlogo.png">
-								<h3>GSB</h3>
-							</div>
-						</a>
+						</div>
 					</div>
 				</div>
-				<a href="#">
-					<button class="mrtel contact_btn ne-scale" name="ne-moving_element">
-						<p><i class="fa fa-cog  small white"></i> L'application GSB</p>
-					</button>
-				</a>
 			</section>
 
 			<section id="test" style="position: relative;padding-top: 50px;">
@@ -172,8 +157,38 @@
 			
 		</main>
 		<footer>
-			<div class="footer">
-				<p>GSB.best ©2021 by <a href="https://nothingelese.fr/?site=gsb.best">NothingElse.fr</a></p>
+
+			<div class="grid grid-2">
+				<div>
+					<div class="text_left">
+						<h5 style="font-size: 19px;">Products</h5>
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt mauris vitae libero mattis, sed laoreet urna condimentum. Nam eros nibh, dictum eget velit eu, viverra dapibus ex. Quisque efficitur ligula sed orci iaculis, ac viverra nulla tempus. Donec facilisis vel ligula et fermentum. Cras vulputate lacus vitae enim rutrum posuere. Aliquam rutrum eu leo a vestibulum. Nulla tincidunt dui vel feugiat interdum.
+						</p>
+					</div>
+				</div>
+				<div>
+					<div class="grid grid-2">
+						<div>
+							<div class="text_left">
+								<h5 style="font-size: 19px;">Liens</h5>
+								<p>Link 1</p>
+								<p>Link 1</p>
+								<p>Link 1</p>
+								<p>Link 1</p>
+							</div>
+						</div>
+						<div>
+							<div class="text_left">
+								<h5 style="font-size: 19px;">Liens</h5>
+								<p>Link 1</p>
+								<p>Link 1</p>
+								<p>Link 1</p>
+								<p>Link 1</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</footer>
 		<script src="js/main.js"></script>
