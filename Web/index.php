@@ -157,18 +157,17 @@
 			
 		</main>
 		<footer>
-
 			<div class="grid grid-2">
 				<div>
 					<div class="text_left">
-						<h5 style="font-size: 19px;">Products</h5>
+						<h5 style="font-size: 19px;">Other informations</h5>
 						<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt mauris vitae libero mattis, sed laoreet urna condimentum. Nam eros nibh, dictum eget velit eu, viverra dapibus ex. Quisque efficitur ligula sed orci iaculis, ac viverra nulla tempus. Donec facilisis vel ligula et fermentum. Cras vulputate lacus vitae enim rutrum posuere. Aliquam rutrum eu leo a vestibulum. Nulla tincidunt dui vel feugiat interdum.
 						</p>
 					</div>
 				</div>
 				<div>
-					<div class="grid grid-2">
+					<div class="grid grid-2" id="dqsdd">
 						<div>
 							<div class="text_left">
 								<h5 style="font-size: 19px;">Liens</h5>
@@ -190,6 +189,8 @@
 					</div>
 				</div>
 			</div>
+			<div class="separation"></div>
+			<p class="last_text" >GSB.best ©2021 by <a href="https://nothingelse.fr/">Nothingelse.fr</a> & <a href="https://EvannForest.com/">EvannForest.com</a></p>
 		</footer>
 		<script src="js/main.js"></script>
 	</body>
