@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        table td + td, table th + th { border-left:2px solid black; }
+        table {text-align: center;border:2px solid black;}
+    </style>
+</head>
+<body>
+    <h1>API</h1>
+    <p>You can try : lvillachane | jux7g | Admin</p>
+    <p>You can try : dbunisset | s1y1r | User</p>
+    <form action="" method="post">
+        <input type="text" name="username" id="username">
+        <input type="text" name="password" id="password">
+        <input type="button" value="Se connecter" onclick="getAuth()">
+        <input type="button" value="Logout" onclick="getLogout()">
+        <input type="button" value="TestLog" onclick="getIfImLog()">
+        <input type="button" value="FeeSheets" onclick="getAllFeeSheet()">
+        <input type="button" value="Admin all feeSheets" onclick="getFeeSheet_Admin()">
+    </form>
+    <table id="feesheet">
+        <tr>
+            <th>id</th>
+            <th>use_date</th>
+            <th>description</th>
+            <th>add_date</th>
+            <th>state</th>
+            <th>id_user</th>
+            <th>standard_fee</th>
+            <th>url_pict</th>
+        </tr>
+    </table>
+    <textarea style="width: 100%;height: 200px;" id="rep"></textarea>
+    <input type="number" name="fee" id="fee" placeholder="fee">
+    <input type="date" name="use_date" id="use_date" placeholder="use_date">
+    <input type="text" name="description" id="description" placeholder="description">
+    <input type="number" name="standard_fee" id="standard_fee" placeholder="standard_fee">
+    <input type="button" value="Brouillon" onclick="SendFeeSheet(2)">
+    <input type="button" value="Envoyer la fiche de frais" onclick="SendFeeSheet(1)">
+    <br>
+    <input type="number" name="fee_add" id="fee_add" placeholder="fee">
+    <input type="text" name="label" id="label" placeholder="label">
+    <input type="button" value="Ajouter un frai standard" onclick="AddStandardsFees()">
+    <br>
+    <input type="number" name="standard_id" id="standard_id" placeholder="standard_id">
+    <input type="button" value="Remove standard_id" onclick="RemoveStandardsFees()">
+    <br>
+    <script>
+        function RequestAPI(url, data, feesheet){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let json = JSON.parse(xhr.responseText);
+                    console.log(json);
+                    if(json["id"]===1){
+                        document.getElementById("rep").value = "[OK]" + new Date().toLocaleTimeString() + " " + json["message"] + "\n" + document.getElementById("rep").value;
+                    }else{
+                        document.getElementById("rep").value = "[Err]" + new Date().toLocaleTimeString() + " " + json["message"] + "\n" + document.getElementById("rep").value;
+                    }
+                    if(feesheet){
+                        delete json["id"];
+                        delete json["message"];
+                        console.log(json);
+                        for (const [key, value] of Object.entries(json)) {
+                            var table = document.getElementById("feesheet");
+                            var row = table.insertRow(1)
+                            row.insertCell(0).innerHTML = value["id"];
+                            row.insertCell(1).innerHTML = value["use_date"];
+                            row.insertCell(2).innerHTML = value["description"];
+                            row.insertCell(3).innerHTML = value["add_date"];
+                            row.insertCell(4).innerHTML = value["state"];
+                            row.insertCell(5).innerHTML = value["id_user"];
+                            row.insertCell(6).innerHTML = value["standard_fee"];
+                            row.insertCell(7).innerHTML = value["url_pict"];
+                        }
+                    }
+                }
+            };
+            xhr.send(data);
+        }
+
+
+        function getAuth(){
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let url = "api/users/api_session_open.php";
+            let data = JSON.stringify({"username": username, "password": password});
+
+            RequestAPI(url, data, 0);
+        }
+
+
+        function AddStandardsFees(){
+            let label = document.getElementById("label").value;
+            let fee_add = document.getElementById("fee_add").value;
+            let url = "api/standard_fees/api_add_standards_fees.php";
+            let data = JSON.stringify({"label": label, "fee": fee_add});
+
+            RequestAPI(url, data, 0);
+        }
+
+
+        function RemoveStandardsFees(){
+            let standard_id = document.getElementById("standard_id").value;
+            let url = "api/standard_fees/api_remove_standards_fees.php";
+            let data = JSON.stringify({"standard_id": standard_id});
+
+            RequestAPI(url, data, 0);
+        }
+
+
+        function SendFeeSheet(is_end){
+            let fee = document.getElementById("fee").value;
+            let use_date = document.getElementById("use_date").value;
+            let description = document.getElementById("description").value;
+            let standard_fee = document.getElementById("standard_fee").value;
+            let url = "api/feesheets/api_add_feesheet.php";
+            let data = JSON.stringify({"fee": fee, "use_date": use_date, "description": description, "standard_fee": standard_fee, "is_end": is_end});
+
+            RequestAPI(url, data, 0);
+        }
+
+        function getLogout(){
+            let url = "api/users/api_logout.php";
+            let data = "";
+
+            RequestAPI(url, data, 0);
+        }
+
+        function getIfImLog(){
+            let url = "api/users/api_logged.php";
+            let data = "";
+
+            RequestAPI(url, data, 0);
+        }
+
+        function getAllFeeSheet(){
+            let url = "api/feesheets/api_get_all_feesheet.php";
+            let data = "";
+
+            RequestAPI(url, data, 1);
+        }
+
+        function getFeeSheet_Admin(){
+            let url = "api/feesheets/api_admin_get_feesheet.php";
+            let data = "";
+
+            RequestAPI(url, data, 1);
+        }
+    </script>
+</body>
+</html>
