@@ -1,7 +1,5 @@
 <?php
 
-    require_once("../includes/main.db.php");
-
     if(isset($_SESSION["id"])){
         if($_SESSION["id_role"] == 3){
 
@@ -43,5 +41,3 @@
             "message" => "You are not logged"
         ];
     }
-
-    echo json_encode($return_data);

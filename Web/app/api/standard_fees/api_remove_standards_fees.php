@@ -1,19 +1,17 @@
 <?php
 
-    require_once("../includes/main.db.php");
-
     if(isset($_SESSION["id"])){
         if($_SESSION["id_role"] == 3 or $_SESSION["id_role"] == 2 or $_SESSION["id_role"] == 1){ # Ok admin, comptable, admin_region
-            if(isset($post_json_data)){
-                $post_data = array(["standard_id", 5, 1]);
-                $post_data = post_security($post_data);
+            if(isset($data_from_client)){
+                $data = array(["standard_id", 5, 1]);
+                $data = data_security($data);
                 if(!$error){
                     $sqlr = $database->prepare("
                         UPDATE `standard_fee`
                         SET deleted = 1
                         WHERE id = :id
                     ");
-                    $sqlr->bindParam(':id', $post_data["standard_id"]);
+                    $sqlr->bindParam(':id', $data["standard_id"]);
                     if($sqlr->execute()) {
                         $return_data = [
                             "id" => 1,
@@ -49,5 +47,3 @@
             "message" => "You are not logged"
         ];
     }
-
-    echo json_encode($return_data);
