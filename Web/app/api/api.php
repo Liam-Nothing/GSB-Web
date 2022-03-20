@@ -9,7 +9,6 @@
 	
 	require_once("includes/functs_db.php");
 	require_once("includes/functs_utils.php");
-	require_once("includes/functs_api.php");
 
     header('Content-Type: application/json');
     $data_from_client = (array) json_decode(stripslashes(file_get_contents("php://input")));

@@ -16,7 +16,9 @@
             case "user_logged_session":
                 require_once(dirname(__FILE__)."/../users/api_logged.php");
                 break;
-            //admin_create_user
+            case "admin_create_user":
+                require_once(dirname(__FILE__)."/../users/api_admin_create_user.php");
+                break;
             //admin_update_user
             //admin_delete_user
 
