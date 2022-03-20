@@ -16,6 +16,9 @@
             case "user_logged_session":
                 require_once(dirname(__FILE__)."/../users/api_logged.php");
                 break;
+            //admin_create_user
+            //admin_update_user
+            //admin_delete_user
 
             // Standard feesheets
             case "admin_add_standard_fees":
@@ -38,6 +41,9 @@
             case "user_add_feesheets":
                 require_once(dirname(__FILE__)."/../feesheets/api_add_feesheet.php");
                 break;
+            //admin_update_feesheets
+            //admin_update_feesheets_state
+            //admin_delete_feesheets
 
             default:
                 $return_data = [
