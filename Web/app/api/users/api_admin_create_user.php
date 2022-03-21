@@ -14,30 +14,38 @@
                     ["city", 50, 0],
                     ["hire_date", 255, 0],
                     ["id_role", 2, 0],
-                    ["zipcode", 10, 0],
+                    ["zipcode", 10, 0]
                 );
                 $data = data_security($data);
     
                 if(!$error){
 
                     # if XXX is empty set to NULL in db !
+                    $sql_resquest_field_list = ["username", "password", "email", "first_name", "last_name", "birth_date", "adress", "city", "hire_date", "id_role", "zipcode"];
+                    $sqlr_field = [];
+                    $sqlr_values = [];
+                    foreach ($sql_resquest_field_list as $value) {
+                        if($data[$value] != "null") {
+                            array_push($sqlr_field, $value);
+                            array_push($sqlr_values, ":".$value);
+                        }
+                    }
+                    unset($value);
+
 
                     $sqlr = $database->prepare("
                         INSERT INTO `users`
-                        (username, password, email, first_name, last_name, birth_date, adress, city, hire_date, id_role, zipcode) 
-                        VALUES (:username, :password, :email, :first_name, :last_name, :birth_date, :adress, :city, :hire_date, :id_role, :zipcode)
+                        (".join(", ",$sqlr_field).") 
+                        VALUES (".join(", ",$sqlr_values).")
                     ");
+                    foreach ($sqlr_field as $value) {
+                        if($value != "username" or $value != "password") {
+                            $sqlr->bindParam(':'.$value, $data[$value]);
+                        }
+                    }
+                    unset($value);
                     $sqlr->bindParam(':username', $data["username"]);
                     $sqlr->bindValue(':password', password_hash($data["password"], PASSWORD_DEFAULT));
-                    $sqlr->bindParam(':email', $data["email"]);
-                    $sqlr->bindParam(':first_name', $data["first_name"]);
-                    $sqlr->bindParam(':last_name', $data["last_name"]);
-                    $sqlr->bindParam(':birth_date', $data["birth_date"]);
-                    $sqlr->bindParam(':adress', $data["adress"]);
-                    $sqlr->bindParam(':city', $data["city"]);
-                    $sqlr->bindParam(':hire_date', $data["hire_date"]);
-                    $sqlr->bindParam(':id_role', $data["id_role"]);
-                    $sqlr->bindParam(':zipcode', $data["zipcode"]);
 
                     if($sqlr->execute()) {
                         $return_data = [
@@ -52,10 +60,8 @@
                     }
 
                 }else{
-                    $return_data = [
-                        "id" => 2,
-                        "message" => "Error!"
-                    ];
+                    $return_data["id"] = 2;
+                    $return_data["message"] = "Error!";
                 }
             }
         } elseif ($_SESSION["id_role"] == 3) {

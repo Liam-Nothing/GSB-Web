@@ -19,8 +19,11 @@
             case "admin_create_user":
                 require_once(dirname(__FILE__)."/../users/api_admin_create_user.php");
                 break;
-            //admin_update_user
+            case "admin_update_user":
+                require_once(dirname(__FILE__)."/../users/api_admin_update_user.php");
+                break;
             //admin_delete_user
+            //admin_password_reset
 
             // Standard feesheets
             case "admin_add_standard_fees":
@@ -43,6 +46,8 @@
             case "user_add_feesheets":
                 require_once(dirname(__FILE__)."/../feesheets/api_add_feesheet.php");
                 break;
+            //admin_search_feesheets
+            //admin_view_one_feesheet
             //admin_update_feesheets
             //admin_update_feesheets_state
             //admin_delete_feesheets

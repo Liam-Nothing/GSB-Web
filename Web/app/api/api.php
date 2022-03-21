@@ -12,7 +12,7 @@
 
     header('Content-Type: application/json');
     $data_from_client = (array) json_decode(stripslashes(file_get_contents("php://input")));
-    $database = connectDB("***REMOVED***", $config);
+    $database = connectDB("nothingefdgsb", $config);
     session_start();
 
     if(count($data_from_client)>0){

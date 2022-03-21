@@ -3,6 +3,7 @@
     function data_security($arrays) {
         global $data_from_client;
         global $error;
+        global $return_data;
 
         $array_return = array();
         foreach ($arrays as $array) {
@@ -18,6 +19,9 @@
                 $array_return[$variable_name] = htmlspecialchars($data_from_client[$variable_name]);
             }else{
                 $error = $variable_name;
+                $return_data = [
+                    "error" => $variable_name
+                ];
             }
         }
         return $array_return;
