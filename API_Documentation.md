@@ -19,7 +19,6 @@ Inside we have 3 elements the `id` of the user a int, `username` a string and `i
 
 ### - User management
 - user_open_session
-<small>
   - Who can call : Everyone
   - What arguments : 
     - username, string, 3, 50
@@ -31,7 +30,6 @@ Inside we have 3 elements the `id` of the user a int, `username` a string and `i
       - `{"id":2,"message":"Bad password"}`
       - `{"id":2,"message":"Bad user"}`
       - `{"id":2,"message":"Error!"}`
-</small><br>
 - user_lougout_session
 - user_logged_session
 - user_logged_session
