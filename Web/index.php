@@ -33,15 +33,9 @@
 					</ul>
 				</div>
 			</nav>
-			
-			<!-- <div class="progress-container">
-				<div class="progress-bar" id="myBar"></div>
-			</div> -->
 		</header>
-
-  <script src='https://cldup.com/S6Ptkwu_qA.js'></script>
+  		<script src='https://cldup.com/S6Ptkwu_qA.js'></script>
 		<main>
-
 			<section style="position:relative">
 				<div id="particles-js"></div>
 					<div id="main">
@@ -60,10 +54,6 @@
 					</svg>
 				</div>
 			</section>
-
-
-			
-
 			<section id="menu" style="position: relative;">
 				<div class="grid grid-2 grid-marg-max">
 					<div>
@@ -78,9 +68,6 @@
 								Toute l'équipe de votre laboratoire de Lyon vous accueille dans une ambiance calme et d'écoute pour réaliser vos prélèvements et analyses médicales. Le laboratoire est équipé de matériels récents très performants, qui nous permettent de réaliser un grand nombre d'analyses et vous garantissent un service de qualité optimale.
 								</p>
 							</div>
-							<!-- <div class="btn-container">
-								<button>En savoir plus</button>
-							</div> -->
 						</div>
 					</div>
 				</div>
@@ -94,9 +81,6 @@
 								Le test de dépistage pour le coronavirus est basé sur une méthode de biologie moléculaire appelée PCR (Polymerase Chain Reaction ou réaction en chaîne par polymérase). C'est une technique de routine utilisée dans pratiquement tous les laboratoires de biologie qui permet d'amplifier spécifiquement un ADN d'intérêt après plusieurs cycles de réactions biochimiques.
 								</p>
 							</div>
-							<!-- <div class="btn-container">
-								<button>En savoir plus</button>
-							</div> -->
 						</div>
 					</div>
 					<div>
@@ -104,7 +88,6 @@
 					</div>
 				</div>
 			</section>
-
 			<section id="test" style="position: relative;padding-top: 50px;">
 				<div class="custom-shape-divider-top-1645479630">
 					<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -113,7 +96,6 @@
 						<path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
 					</svg>
 				</div>
-
 				<div class="grid grid-3 grid-marg-max" style="margin-bottom:150px;">
 					<div class="down-transition ne-transition ne-card" name="ne-moving_element">
 						<h2>Tests PCR</h2>
@@ -128,7 +110,6 @@
 							<p>Ceci est un test plus rapide, qui se fait de la meme maniere que le test PCR. Il est toute fois plus rapide, le résultat est donner environs 15 minutes après le test. Il y a peu de faux positif mais la fiabilité de detection n'est pas très bonne.</p>
 							<button class="ne-bn-card">Prendre rendez-vous</button>
 						</div>
-
 					</div>
 					<div class="down-transition ne-transition ne-card" name="ne-moving_element">
 						<h2>Check-Up</h2>
@@ -146,7 +127,6 @@
 					</svg>
 				</div>
 			</section>
-			
 			<section id="App" style="position: relative;">
 				<div class="grid grid-2 grid-marg-max">
 					<div>
@@ -158,7 +138,7 @@
 							<h2>Gestion de frais</h2>
 							<div class="text_left_border">
 								<p>
-								Toute l'équipe de votre laboratoire de Lyon vous accueille dans une ambiance calme et d'écoute pour réaliser vos prélèvements et analyses médicales. Le laboratoire est équipé de matériels récents très performants, qui nous permettent de réaliser un grand nombre d'analyses et vous garantissent un service de qualité optimale.
+								Des élèves de BTS SIO ont pu développer ne alterance dans notre entreprise une application pour la gestion de frais. Cette application sert a notre personnelle mais elle est également disponible pour les autres professionels.
 								</p>
 							</div>
 							<div class="btn-container">
@@ -168,7 +148,6 @@
 					</div>
 				</div>
 			</section>
-			
 		</main>
 		<footer>
 			<div class="grid grid-2" style="padding-top: 15px;">
