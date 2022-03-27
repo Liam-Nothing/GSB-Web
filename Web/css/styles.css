@@ -1,6 +1,5 @@
-.navbar{
-    padding-left: 15px;
-    padding-right: 15px;
+.titanic {
+	float: none;
 }
 
 /* To disable blank at the to of the page */
@@ -356,6 +355,50 @@ img {
 
 /*********************************************************************************/
 
+/* Moving element */
+
+*[name="ne-moving_element"] {
+	position: relative;
+}
+
+.left-transition {
+	opacity: 0;
+	left: -10%;
+	transition-duration: 0.5s;
+}
+
+.left-transition.ne-transition {
+	left: 0px !important;
+	top: 0px !important;
+	opacity: 1 !important;
+}
+
+.right-transition {
+	opacity: 0;
+	right: -10%;
+	transition-duration: 0.5s;
+}
+
+.right-transition.ne-transition {
+	right: 0px !important;
+	top: 0px !important;
+	opacity: 1 !important;
+}
+
+.down-transition {
+	opacity: 0;
+	top: 20px;
+	transition-delay: 0.15s;
+	transition-duration: 0.5s;
+}
+
+.down-transition.ne-transition {
+	left: 0px !important;
+	top: 0px !important;
+	opacity: 1 !important;
+}
+
+/*********************************************************************************/
 #main {
 	overflow: hidden;
 	position: relative;
@@ -381,7 +424,7 @@ img {
 	-webkit-background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top center;
-	height: 100vh;
+	/* height: 100vh; */
 }
 
 body {
@@ -849,7 +892,8 @@ footer {
 	background-color: #204977;
 	color: white;
 	box-shadow: 0px -5px 16px -8px #000000;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
+	padding-top: 10px;
 	padding-top: 10px;
 	position: relative;
 }
@@ -881,4 +925,60 @@ footer .separation {
 
 footer .last_text a {
 	color: #fff;
+}
+
+.grid-marg-max {
+	margin-bottom: 80px;
+	margin-top: 80px;
+}
+
+.ne-card{
+	overflow: auto;
+    width: max-content;
+    max-width: 100%;
+    text-align: center;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 10px;
+	background: #fff;
+    box-shadow:  -20px 20px 60px #c6c9c8,
+                 20px -20px 60px #ffffff;
+	transition: 0.4s;
+	transition-delay: 0s;
+	width: 257px;
+}
+
+.ne-card h2 {
+	font-weight: normal !important;
+}
+
+.navbar{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.ne-bn-card{
+	margin: 20px;
+	padding: 10px 12px;
+	text-align: center;
+	background-color: #193758;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+.ne-bn-card:hover {
+	background-color: #306daf;
+}
+
+.ne-card:hover {
+	transform: scale(1.1);
+}
+
+footer p a {
+	color: #3e7fc5;
 }
