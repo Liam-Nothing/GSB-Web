@@ -1,3 +1,18 @@
+<?php
+
+if(!empty($_GET)){
+	if(isset($_GET["d"])){
+		header("Location: https://drive.google.com/drive/folders/1zLw5eI6HpeVAV4q72QA3l2gc45WU4KLA");
+	}
+	if(isset($_GET["t"])){
+		header("Location: https://trello.com/b/jD3VTtFx/gsb-advancement");
+	}
+	if(isset($_GET["g"])){
+		header("Location: https://github.com/search?q=user%3ALiam-Nothing+GSB");
+	}
+}
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head> 
@@ -12,9 +27,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		
 		<title>Galaxy Swiss Bourdin laboratory | BTS Application</title>
-
 	</head>
 	<body>
 		<header id="header">
