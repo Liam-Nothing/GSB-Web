@@ -90,10 +90,10 @@
         function getAuth(){
             let username = document.getElementById("username").value;
             let password = document.getElementById("password").value;
-            let url = "api/users/api_session_open.php";
-            let data = JSON.stringify({"username": username, "password": password});
+            let api = "user_open_session";
+            let data = JSON.stringify({"api": api, "username": username, "password": password});
 
-            RequestAPI(url, data, 0);
+            RequestAPI("api/api.php", data, 0);
         }
 
 

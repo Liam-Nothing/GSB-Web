@@ -139,7 +139,8 @@ CREATE TABLE `users` (
   `city` varchar(50) DEFAULT NULL,
   `hire_date` date DEFAULT NULL,
   `id_role` int(11) NOT NULL DEFAULT 0,
-  `zipcode` varchar(10) DEFAULT NULL
+  `zipcode` varchar(10) DEFAULT NULL,
+  `deleted` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -147,33 +148,33 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `username`, `password`, `birth_date`, `adress`, `city`, `hire_date`, `id_role`, `zipcode`) VALUES
-(1, 'Louis', 'Villechalane', NULL, 'lvillachane', '$2y$10$E5OyxUDDU9d05xMhZu3q4ut09rbVABoQfpfK2BUc9a/V8YYfLpsQm', NULL, '8 rue des Charmes', 'Cahors', '2005-12-21', 3, '46000'),
-(2, 'David', 'Andre', NULL, 'dandre', '$2y$10$kulmULqMiET1uF265b3Gs.ywK6iA05ChqSQhRip/yoIHnPcsCj8vO', NULL, '1 rue Petit', 'Lalbenque', '1998-11-23', 0, '46200'),
-(3, 'Christian', 'Bedos', NULL, 'cbedos', '$2y$10$F16W0PnQcvI08vMqCZTzAe7z3VfyKNwRDwUPov8cjFiInd3niqgFi', NULL, '1 rue Peranud', 'Montcuq', '1995-01-12', 0, '46250'),
-(4, 'Louis', 'Tusseau', NULL, 'ltusseau', '$2y$10$1YKSrC05wERM60ViNPVBqOndPqIZZSrmW3jy0Lm2HICPG8xjBRLFu', NULL, '22 rue des Ternes', 'Gramat', '2000-05-01', 0, '46123'),
-(5, 'Pascal', 'Bentot', NULL, 'pbentot', '$2y$10$KTS6yScI3CbICD4q48W7Cecx2wdl06BVeuQBFf2ZqcjLXj0pW1/D6', NULL, '11 allée des Cerises', 'Bessines', '1992-07-09', 0, '46512'),
-(6, 'Luc', 'Bioret', NULL, 'lbioret', '$2y$10$zWlZb95s5lzKffCV4Zx.9eT4rRFXS0t/2gr5HSpwgkp/rrEMJx2Yq', NULL, '1 Avenue gambetta', 'Cahors', '1998-05-11', 0, '46000'),
-(7, 'Francis', 'Bunisset', NULL, 'fbunisset', '$2y$10$4EElzSG6GcYjzcpKufjYsOKyPTl13kyOMMKgPQpP7OJppH3FOcJEW', NULL, '10 rue des Perles', 'Montreuil', '1987-10-21', 0, '93100'),
-(8, 'Denise', 'Bunisset', NULL, 'dbunisset', '$2y$10$Uxjn3Jc2MreXjSm54D4kqOxtoV7dismzQZoXaTA/eK8mdmnc5R9iO', NULL, '23 rue Manin', 'paris', '2010-12-05', 0, '75019'),
-(9, 'Bernard', 'Cacheux', NULL, 'bcacheux', '$2y$10$71VkIyRExMABZ7EYtV6vbeNmDWaYOFYfIgSF.5wU0QLRF1rbBFivi', NULL, '114 rue Blanche', 'Paris', '2009-11-12', 0, '75017'),
-(10, 'Eric', 'Cadic', NULL, 'ecadic', '$2y$10$/uTO7t9Tx1hLYjNP4N/ExOHQF5wbv4ZVB1EgyyPGeoBiEOjf53hdu', NULL, '123 avenue de la République', 'Paris', '2008-09-23', 0, '75011'),
-(11, 'Catherine', 'Charoze', NULL, 'ccharoze', '$2y$10$092WyVtkaPiF.QgMVuNK2OHGSHk0BACKyHu9TO8O1Gb1G59zD5U.W', NULL, '100 rue Petit', 'Paris', '2005-11-12', 0, '75019'),
-(12, 'Christophe', 'Clepkens', NULL, 'cclepkens', '$2y$10$5YyXEcYo0vRPnnGhnJzReeuQxIxA39DXDNh5/80jWD0k2b34WAEEe', NULL, '12 allée des Anges', 'Romainville', '2003-08-11', 0, '93230'),
-(13, 'Vincenne', 'Cottin', NULL, 'vcottin', '$2y$10$sI74QsYDYsL5SUvQ0.V3/ekxU0KDSAUcrROpFEEl0KcM8c.ezJ4iK', NULL, '36 rue Des Roches', 'Monteuil', '2001-11-18', 0, '93100'),
-(14, 'François', 'Daburon', NULL, 'fdaburon', '$2y$10$MIRNbfvU1B76p.3zbdY2L.j/ZCY1EYufTvq01taSz3RfThV3z/.CO', NULL, '13 rue de Chanzy', 'Créteil', '2002-02-11', 0, '94000'),
-(15, 'Philippe', 'De', NULL, 'pde', '$2y$10$Yt0nOv6ETgCFUuojjMxTbOvLLmvipf1YktejADwp5T1BY00.hM0Z2', NULL, '13 rue Barthes', 'Créteil', '2010-12-14', 0, '94000'),
-(16, 'Michel', 'Debelle', NULL, 'mdebelle', '$2y$10$DciClQB0fkmxMulMXM/kQOrWgRK71rCISyb8N9ivWy9qu0uN.YDLe', NULL, '181 avenue Barbusse', 'Rosny', '2006-11-23', 0, '93210'),
-(17, 'Jeanne', 'Debelle', NULL, 'jdebelle', '$2y$10$92xy87Gx6a0ybbeK6ALOEud1twZw.Qd17eBiOmeYY1k45vGb6sSuO', NULL, '134 allée des Joncs', 'Nantes', '2000-05-11', 0, '44000'),
-(18, 'Michel', 'Debroise', NULL, 'mdebroise', '$2y$10$kQXophDqW9Qajpa5OOYlb.umFt18fIEGKCdGCy8CljryXumyfMHqa', NULL, '2 Bld Jourdain', 'Nantes', '2001-04-17', 0, '44000'),
-(19, 'Nathalie', 'Desmarquest', NULL, 'ndesmarquest', '$2y$10$ii4mQPHPdOgC7ztLfY0SUu72v9r5UDtUuEd.n6/i09b5mNg58dopO', NULL, '14 Place d Arc', 'Orléans', '2005-11-12', 0, '45000'),
-(20, 'Pierre', 'Desnost', NULL, 'pdesnost', '$2y$10$kshFvNcWuLnEKtbSIhhXl.I4Li301CkWrRGnJxf673IejRqUFwUxW', NULL, '16 avenue des Cèdres', 'Guéret', '2001-02-05', 0, '23200'),
-(21, 'Frédéric', 'Dudouit', NULL, 'fdudouit', '$2y$10$ZFx8ew9P9pNHftGJdtwUL.drNCqrRQ29Gz4HFHl2/eHwBuCk6tCGG', NULL, '18 rue de l église', 'GrandBourg', '2000-08-01', 0, '23120'),
-(22, 'Claude', 'Duncombe', NULL, 'cduncombe', '$2y$10$M8qjAkFHBvqdWT1yHH1WmOeK4.2s7/PGIgosvOxw8OT7R370AD7/O', NULL, '19 rue de la tour', 'La souteraine', '1987-10-10', 0, '23100'),
-(23, 'Céline', 'Enault-Pascreau', NULL, 'cenault', '$2y$10$KBJFUuPfIBTzPUA9jNW6re9niTbBuNhweayVst7NFOb4M0X9yPLI6', NULL, '25 place de la gare', 'Gueret', '1995-09-01', 0, '23200'),
-(24, 'Valérie', 'Eynde', NULL, 'veynde', '$2y$10$RcuQQeYOKuGT5dZOMVRm4upJ3DATaoa8dPid/Ns9ROu0c61gf0mQK', NULL, '3 Grand Place', 'Marseille', '1999-11-01', 0, '13015'),
-(25, 'Jacques', 'Finck', NULL, 'jfinck', '$2y$10$l6hJGSlQOS0fHS6MILEGxuQuxxN//t7lTsrZkl2oQGoetnCFt2xZW', NULL, '10 avenue du Prado', 'Marseille', '2001-11-10', 0, '13002'),
-(26, 'Fernande', 'Frémont', NULL, 'ffremont', '$2y$10$dWzWFRipTZE2LT.Pfqwa7uTtjZIBM.D8Pp0mdXPcKKgoTq.t5C6ru', NULL, '4 route de la mer', 'Allauh', '1998-10-01', 0, '13012'),
-(27, 'Alain', 'Gest', NULL, 'agest', '$2y$10$EB.9AC9b1tzXMnuSTspwjeQVEgeYQiThZ/uGc9pTeIMDxhSXkDIkG', NULL, '30 avenue de la mer', 'Berre', '1985-11-01', 0, '13025');
+(1, 'Louis', 'Villechalane', NULL, 'lvillachane', '$2y$10$E5OyxUDDU9d05xMhZu3q4ut09rbVABoQfpfK2BUc9a/V8YYfLpsQm', NULL, '8 rue des Charmes', 'Cahors', '2005-12-21', 3, '46000', 0),
+(2, 'David', 'Andre', NULL, 'dandre', '$2y$10$kulmULqMiET1uF265b3Gs.ywK6iA05ChqSQhRip/yoIHnPcsCj8vO', NULL, '1 rue Petit', 'Lalbenque', '1998-11-23', 0, '46200', 0),
+(3, 'Christian', 'Bedos', NULL, 'cbedos', '$2y$10$F16W0PnQcvI08vMqCZTzAe7z3VfyKNwRDwUPov8cjFiInd3niqgFi', NULL, '1 rue Peranud', 'Montcuq', '1995-01-12', 0, '46250', 0),
+(4, 'Louis', 'Tusseau', NULL, 'ltusseau', '$2y$10$1YKSrC05wERM60ViNPVBqOndPqIZZSrmW3jy0Lm2HICPG8xjBRLFu', NULL, '22 rue des Ternes', 'Gramat', '2000-05-01', 0, '46123', 0),
+(5, 'Pascal', 'Bentot', NULL, 'pbentot', '$2y$10$KTS6yScI3CbICD4q48W7Cecx2wdl06BVeuQBFf2ZqcjLXj0pW1/D6', NULL, '11 allée des Cerises', 'Bessines', '1992-07-09', 0, '46512', 0),
+(6, 'Luc', 'Bioret', NULL, 'lbioret', '$2y$10$zWlZb95s5lzKffCV4Zx.9eT4rRFXS0t/2gr5HSpwgkp/rrEMJx2Yq', NULL, '1 Avenue gambetta', 'Cahors', '1998-05-11', 0, '46000', 0),
+(7, 'Francis', 'Bunisset', NULL, 'fbunisset', '$2y$10$4EElzSG6GcYjzcpKufjYsOKyPTl13kyOMMKgPQpP7OJppH3FOcJEW', NULL, '10 rue des Perles', 'Montreuil', '1987-10-21', 0, '93100', 0),
+(8, 'Denise', 'Bunisset', NULL, 'dbunisset', '$2y$10$Uxjn3Jc2MreXjSm54D4kqOxtoV7dismzQZoXaTA/eK8mdmnc5R9iO', NULL, '23 rue Manin', 'paris', '2010-12-05', 0, '75019', 0),
+(9, 'Bernard', 'Cacheux', NULL, 'bcacheux', '$2y$10$71VkIyRExMABZ7EYtV6vbeNmDWaYOFYfIgSF.5wU0QLRF1rbBFivi', NULL, '114 rue Blanche', 'Paris', '2009-11-12', 0, '75017', 0),
+(10, 'Eric', 'Cadic', NULL, 'ecadic', '$2y$10$/uTO7t9Tx1hLYjNP4N/ExOHQF5wbv4ZVB1EgyyPGeoBiEOjf53hdu', NULL, '123 avenue de la République', 'Paris', '2008-09-23', 0, '75011', 0),
+(11, 'Catherine', 'Charoze', NULL, 'ccharoze', '$2y$10$092WyVtkaPiF.QgMVuNK2OHGSHk0BACKyHu9TO8O1Gb1G59zD5U.W', NULL, '100 rue Petit', 'Paris', '2005-11-12', 0, '75019', 0),
+(12, 'Christophe', 'Clepkens', NULL, 'cclepkens', '$2y$10$5YyXEcYo0vRPnnGhnJzReeuQxIxA39DXDNh5/80jWD0k2b34WAEEe', NULL, '12 allée des Anges', 'Romainville', '2003-08-11', 0, '93230', 0),
+(13, 'Vincenne', 'Cottin', NULL, 'vcottin', '$2y$10$sI74QsYDYsL5SUvQ0.V3/ekxU0KDSAUcrROpFEEl0KcM8c.ezJ4iK', NULL, '36 rue Des Roches', 'Monteuil', '2001-11-18', 0, '93100', 0),
+(14, 'François', 'Daburon', NULL, 'fdaburon', '$2y$10$MIRNbfvU1B76p.3zbdY2L.j/ZCY1EYufTvq01taSz3RfThV3z/.CO', NULL, '13 rue de Chanzy', 'Créteil', '2002-02-11', 0, '94000', 0),
+(15, 'Philippe', 'De', NULL, 'pde', '$2y$10$Yt0nOv6ETgCFUuojjMxTbOvLLmvipf1YktejADwp5T1BY00.hM0Z2', NULL, '13 rue Barthes', 'Créteil', '2010-12-14', 0, '94000', 0),
+(16, 'Michel', 'Debelle', NULL, 'mdebelle', '$2y$10$DciClQB0fkmxMulMXM/kQOrWgRK71rCISyb8N9ivWy9qu0uN.YDLe', NULL, '181 avenue Barbusse', 'Rosny', '2006-11-23', 0, '93210', 0),
+(17, 'Jeanne', 'Debelle', NULL, 'jdebelle', '$2y$10$92xy87Gx6a0ybbeK6ALOEud1twZw.Qd17eBiOmeYY1k45vGb6sSuO', NULL, '134 allée des Joncs', 'Nantes', '2000-05-11', 0, '44000', 0),
+(18, 'Michel', 'Debroise', NULL, 'mdebroise', '$2y$10$kQXophDqW9Qajpa5OOYlb.umFt18fIEGKCdGCy8CljryXumyfMHqa', NULL, '2 Bld Jourdain', 'Nantes', '2001-04-17', 0, '44000', 0),
+(19, 'Nathalie', 'Desmarquest', NULL, 'ndesmarquest', '$2y$10$ii4mQPHPdOgC7ztLfY0SUu72v9r5UDtUuEd.n6/i09b5mNg58dopO', NULL, '14 Place d Arc', 'Orléans', '2005-11-12', 0, '45000', 0),
+(20, 'Pierre', 'Desnost', NULL, 'pdesnost', '$2y$10$kshFvNcWuLnEKtbSIhhXl.I4Li301CkWrRGnJxf673IejRqUFwUxW', NULL, '16 avenue des Cèdres', 'Guéret', '2001-02-05', 0, '23200', 0),
+(21, 'Frédéric', 'Dudouit', NULL, 'fdudouit', '$2y$10$ZFx8ew9P9pNHftGJdtwUL.drNCqrRQ29Gz4HFHl2/eHwBuCk6tCGG', NULL, '18 rue de l église', 'GrandBourg', '2000-08-01', 0, '23120', 0),
+(22, 'Claude', 'Duncombe', NULL, 'cduncombe', '$2y$10$M8qjAkFHBvqdWT1yHH1WmOeK4.2s7/PGIgosvOxw8OT7R370AD7/O', NULL, '19 rue de la tour', 'La souteraine', '1987-10-10', 0, '23100', 0),
+(23, 'Céline', 'Enault-Pascreau', NULL, 'cenault', '$2y$10$KBJFUuPfIBTzPUA9jNW6re9niTbBuNhweayVst7NFOb4M0X9yPLI6', NULL, '25 place de la gare', 'Gueret', '1995-09-01', 0, '23200', 0),
+(24, 'Valérie', 'Eynde', NULL, 'veynde', '$2y$10$RcuQQeYOKuGT5dZOMVRm4upJ3DATaoa8dPid/Ns9ROu0c61gf0mQK', NULL, '3 Grand Place', 'Marseille', '1999-11-01', 0, '13015', 0),
+(25, 'Jacques', 'Finck', NULL, 'jfinck', '$2y$10$l6hJGSlQOS0fHS6MILEGxuQuxxN//t7lTsrZkl2oQGoetnCFt2xZW', NULL, '10 avenue du Prado', 'Marseille', '2001-11-10', 0, '13002', 0),
+(26, 'Fernande', 'Frémont', NULL, 'ffremont', '$2y$10$dWzWFRipTZE2LT.Pfqwa7uTtjZIBM.D8Pp0mdXPcKKgoTq.t5C6ru', NULL, '4 route de la mer', 'Allauh', '1998-10-01', 0, '13012', 0),
+(27, 'Alain', 'Gest', NULL, 'agest', '$2y$10$EB.9AC9b1tzXMnuSTspwjeQVEgeYQiThZ/uGc9pTeIMDxhSXkDIkG', NULL, '30 avenue de la mer', 'Berre', '1985-11-01', 0, '13025', 0);
 
 --
 -- Index pour les tables déchargées

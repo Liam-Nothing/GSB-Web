@@ -1,6 +1,4 @@
 <?php
-    
-    require_once("../includes/main.php");
 
     if(isset($_SESSION["id"])){
 
@@ -25,5 +23,3 @@
             "message" => "You are not logged"
         ];
     }
-
-    echo json_encode($return_data);

@@ -1,7 +1,5 @@
 <?php
 
-    require_once("../includes/main.db.php");
-
     if(isset($_SESSION["id"])){
 
         $sqlr = $database->prepare("SELECT * FROM `fee_sheet` WHERE id_user = :id_user");
@@ -38,5 +36,3 @@
             "message" => "You are not logged"
         ];
     }
-
-    echo json_encode($return_data);
