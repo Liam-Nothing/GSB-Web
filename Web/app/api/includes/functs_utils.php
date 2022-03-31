@@ -14,14 +14,11 @@
             }else{
                 $min_leght = 3;
             }
-            // if (isset($data_from_client[$variable_name]) and strlen($data_from_client[$variable_name]) <= $max_leght and strlen($data_from_client[$variable_name]) >= $min_leght and !empty($data_from_client[$variable_name])) {
             if (isset($data_from_client[$variable_name]) and strlen($data_from_client[$variable_name]) <= $max_leght and strlen($data_from_client[$variable_name]) >= $min_leght) {
                 $array_return[$variable_name] = htmlspecialchars($data_from_client[$variable_name]);
             }else{
                 $error = $variable_name;
-                $return_data = [
-                    "error" => $variable_name
-                ];
+                $return_data["error"] = $variable_name;
             }
         }
         return $array_return;

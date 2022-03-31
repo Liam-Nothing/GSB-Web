@@ -24,20 +24,14 @@
                 $return_data["id"] = 1;
                 $return_data["message"] = "Feesheet";
             }else{
-                $return_data = [
-                    "id" => 1,
-                    "message" => "No feesheet found"
-                ];
+                $return_data["id"] = 1;
+                $return_data["message"] = "No feesheet found";
             }
         }else{
-            $return_data = [
-                "id" => 2,
-                "message" => "You don't have permission to do that : ".$_SESSION["id_role"]
-            ];
+            $return_data["id"] = 2;
+            $return_data["message"] = "You don't have permission to do that : ".$_SESSION["id_role"];
         }
     }else{
-        $return_data = [
-            "id" => 2,
-            "message" => "You are not logged"
-        ];
+        $return_data["id"] = 2;
+        $return_data["message"] = "You are not logged";
     }

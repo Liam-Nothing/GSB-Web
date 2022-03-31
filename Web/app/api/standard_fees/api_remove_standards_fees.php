@@ -13,37 +13,25 @@
                     ");
                     $sqlr->bindParam(':id', $data["standard_id"]);
                     if($sqlr->execute()) {
-                        $return_data = [
-                            "id" => 1,
-                            "message" => "Standard fee removed"
-                        ];
+                        $return_data["id"] = 1;
+                        $return_data["message"] = "Standard fee removed";
                     }else{
-                        $return_data = [
-                            "id" => 2,
-                            "message" => "Error request"
-                        ];
+                        $return_data["id"] = 2;
+                        $return_data["message"] = "Error request";
                     }
                 }else{
-                    $return_data = [
-                        "id" => 2,
-                        "message" => "Error post data"
-                    ];
+                    $return_data["id"] = 2;
+                    $return_data["message"] = "Error post data";
                 }
             }else{
-                $return_data = [
-                    "id" => 2,
-                    "message" => "Error no post data"
-                ];
+                $return_data["id"] = 2;
+                $return_data["message"] = "Error no post data";
             }
         }else{
-            $return_data = [
-                "id" => 2,
-                "message" => "You don't have permission to do that : ".$_SESSION["id_role"]
-            ];
+            $return_data["id"] = 2;
+            $return_data["message"] = "You don't have permission to do that : ".$_SESSION["id_role"];
         }
     }else{
-        $return_data = [
-            "id" => 2,
-            "message" => "You are not logged"
-        ];
+        $return_data["id"] = 2;
+        $return_data["message"] = "You are not logged";
     }

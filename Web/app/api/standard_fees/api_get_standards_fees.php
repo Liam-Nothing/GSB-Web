@@ -20,14 +20,10 @@
             $return_data["id"] = 1;
             $return_data["message"] = "Standards fees";
         }else{
-            $return_data = [
-                "id" => 2,
-                "message" => "No standards fees found"
-            ];
+            $return_data["id"] = 2;
+            $return_data["message"] = "No standards fees found";
         }
     }else{
-        $return_data = [
-            "id" => 2,
-            "message" => "You are not logged"
-        ];
+        $return_data["id"] = 2;
+        $return_data["message"] = "You are not logged";
     }

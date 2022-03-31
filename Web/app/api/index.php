@@ -13,7 +13,6 @@
     header('Content-Type: application/json');
     $data_from_client = (array) json_decode(stripslashes(file_get_contents("php://input")));
     $database = connectDB("nothingefdgsb", $config);
-    session_start();
 
     if(count($data_from_client)>0){
 		require_once("includes/selector_api.php");
@@ -21,10 +20,8 @@
         $data_from_client = $_GET;
         require_once("includes/selector_api.php");
 	}else{
-		$return_data = [
-			"id" => 2,
-			"message" => "Empty client data"
-		];
+		$return_data["id"] = 2;
+		$return_data["message"] = "Empty client data";
 	}
 
     echo json_encode($return_data);

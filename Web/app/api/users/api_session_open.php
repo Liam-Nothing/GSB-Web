@@ -1,10 +1,8 @@
 <?php
 
     if(isset($_SESSION["id"])){
-        $return_data = [
-            "id" => 2,
-            "message" => "You are already logged"
-        ];
+        $return_data["id"] = 2;
+        $return_data["message"] = "You are already logged";
     }else{
         if(isset($data_from_client)){
             $data = array(["username", 50], ["password", 255]);
@@ -21,27 +19,20 @@
                         $_SESSION["id"] = $sqlr_rows[0]["id"];
                         $_SESSION["username"] = $sqlr_rows[0]["username"];
                         $_SESSION["id_role"] = $sqlr_rows[0]["id_role"];
-                        $return_data = [
-                            "id" => 1,
-                            "message" => "Good password"
-                        ];
+                        $return_data["id"] = 1;
+                        $return_data["message"] = "Good password";
+                        $return_data["php_session_id"] = session_id();
                     }else{
-                        $return_data = [
-                            "id" => 2,
-                            "message" => "Bad password"
-                        ];
+                        $return_data["id"] = 2;
+                        $return_data["message"] = "Bad password";
                     }
                 }else{
-                    $return_data = [
-                        "id" => 2,
-                        "message" => "Bad user"
-                    ];
+                    $return_data["id"] = 2;
+                    $return_data["message"] = "Bad user";
                 }
             }else{
-                $return_data = [
-                    "id" => 2,
-                    "message" => "Error!"
-                ];
+                $return_data["id"] = 2;
+                $return_data["message"] = "Error!";
             }
         }
     }

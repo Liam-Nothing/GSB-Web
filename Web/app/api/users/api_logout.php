@@ -12,14 +12,10 @@
     
         session_destroy();
 
-        $return_data = [
-            "id" => 1,
-            "message" => "Session is destroy"
-        ];
+        $return_data["id"] = 1;
+        $return_data["message"] = "Session is destroy";
 
     }else{
-        $return_data = [
-            "id" => 2,
-            "message" => "You are not logged"
-        ];
+        $return_data["id"] = 2;
+        $return_data["message"] = "You are not logged";
     }

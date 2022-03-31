@@ -1,9 +1,9 @@
 <?php
 
-	$data = array(["api", 30, 1]);
-	$data = data_security($data);
-
     if(!$error){
+
+        require_once("functs_repare.php");
+
         switch ($data["api"]) {
 
             // User management
@@ -53,14 +53,10 @@
             //admin_delete_feesheets
 
             default:
-                $return_data = [
-                    "id" => 2,
-                    "message" => "API doesnt exist"
-                ];
+                $return_data["id"] = 2;
+                $return_data["message"] = "API doesnt exist";
         }
     }else{
-        $return_data = [
-            "id" => 2,
-            "message" => "Client data error"
-        ];
+		$return_data["id"] = 2;
+		$return_data["message"] = "Client data error";
     }	

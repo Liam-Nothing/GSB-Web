@@ -48,15 +48,11 @@
                     $sqlr->bindValue(':password', password_hash($data["password"], PASSWORD_DEFAULT));
 
                     if($sqlr->execute()) {
-                        $return_data = [
-                            "id" => 1,
-                            "message" => "User create"
-                        ];
+                        $return_data["id"] = 1;
+                        $return_data["message"] = "User create";
                     }else{
-                        $return_data = [
-                            "id" => 2,
-                            "message" => "Error request"
-                        ];
+                        $return_data["id"] = 2;
+                        $return_data["message"] = "Error request";
                     }
 
                 }else{
@@ -65,19 +61,13 @@
                 }
             }
         } elseif ($_SESSION["id_role"] == 3) {
-            $return_data = [
-                "id" => 1,
-                "message" => "You are a admin region"
-            ];
+                $return_data["id"] = 1;
+                $return_data["message"] = "You are a admin region";
         }else{
-            $return_data = [
-                "id" => 2,
-                "message" => "You don't have permission to do that : ".$_SESSION["id_role"]
-            ];
+            $return_data["id"] = 2;
+            $return_data["message"] = "You don't have permission to do that : ".$_SESSION["id_role"];
         }
     }else{
-        $return_data = [
-            "id" => 2,
-            "message" => "You are not logged"
-        ];
+        $return_data["id"] = 2;
+        $return_data["message"] = "You are not logged";
     }

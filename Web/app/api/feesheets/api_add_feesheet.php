@@ -3,10 +3,8 @@
     //URL & GET PICTURE
 
     if(!(isset($_SESSION["id"]))){
-        $return_data = [
-            "id" => 2,
-            "message" => "You are not logged"
-        ];
+        $return_data["id"] = 2;
+        $return_data["message"] = "You are not logged";
     }else{
         if(isset($data_from_client)){
             $data = array(["description", 150, 0], ["fee", 10, 0], ["standard_fee", 3, 0], ["use_date", 20, 0], ["is_end", 1, 0]);
@@ -31,22 +29,16 @@
                 }
                 // $sqlr->bindParam(':url_pict', $data["url_pict"]);
                 if($sqlr->execute()) {
-                    $return_data = [
-                        "id" => 1,
-                        "message" => "Feesheet send"
-                    ];
+                    $return_data["id"] = 1;
+                    $return_data["message"] = "Feesheet send";
                 }else{
-                    $return_data = [
-                        "id" => 2,
-                        "message" => "Error request"
-                    ];
+                    $return_data["id"] = 2;
+                    $return_data["message"] = "Error request";
                 }
 
             }else{
-                $return_data = [
-                    "id" => 2,
-                    "message" => "Error data : ".$error
-                ];
+                $return_data["id"] = 2;
+                $return_data["message"] = "Error data : ".$error;
             }
         }
     }
