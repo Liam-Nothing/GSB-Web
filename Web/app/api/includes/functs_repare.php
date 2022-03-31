@@ -10,4 +10,5 @@
     }
 
     session_start();
-    $return_data["php_session_id"] = session_id();
+    // $return_data["php_session_id"] = session_id();
+    // On set in user_open_session
