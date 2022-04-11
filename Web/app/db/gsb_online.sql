@@ -140,14 +140,14 @@ CREATE TABLE `users` (
   `hire_date` date DEFAULT NULL,
   `id_role` int(11) NOT NULL DEFAULT 0,
   `zipcode` varchar(10) DEFAULT NULL,
-  `deleted` int(1) NOT NULL DEFAULT 0
+  `disable` BOOLEAN NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `username`, `password`, `birth_date`, `adress`, `city`, `hire_date`, `id_role`, `zipcode`) VALUES
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `username`, `password`, `birth_date`, `adress`, `city`, `hire_date`, `id_role`, `zipcode`, `disable`) VALUES
 (1, 'Louis', 'Villechalane', NULL, 'lvillachane', '$2y$10$E5OyxUDDU9d05xMhZu3q4ut09rbVABoQfpfK2BUc9a/V8YYfLpsQm', NULL, '8 rue des Charmes', 'Cahors', '2005-12-21', 3, '46000', 0),
 (2, 'David', 'Andre', NULL, 'dandre', '$2y$10$kulmULqMiET1uF265b3Gs.ywK6iA05ChqSQhRip/yoIHnPcsCj8vO', NULL, '1 rue Petit', 'Lalbenque', '1998-11-23', 0, '46200', 0),
 (3, 'Christian', 'Bedos', NULL, 'cbedos', '$2y$10$F16W0PnQcvI08vMqCZTzAe7z3VfyKNwRDwUPov8cjFiInd3niqgFi', NULL, '1 rue Peranud', 'Montcuq', '1995-01-12', 0, '46250', 0),

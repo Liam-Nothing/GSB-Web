@@ -103,7 +103,7 @@ CREATE TABLE `users` (
   `hire_date` date DEFAULT NULL,
   `id_role` int(11) NOT NULL DEFAULT 0,
   `zipcode` varchar(10) DEFAULT NULL,
-  `deleted` int(1) NOT NULL DEFAULT 0
+  `disable` BOOLEAN NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
