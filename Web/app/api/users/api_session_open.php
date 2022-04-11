@@ -22,6 +22,7 @@
                         $return_data["id"] = 1;
                         $return_data["message"] = "Good password";
                         $return_data["php_session_id"] = session_id();
+                        $return_data["id_role"] = $_SESSION["id_role"];
                     }else{
                         $return_data["id"] = 2;
                         $return_data["message"] = "Bad password";
