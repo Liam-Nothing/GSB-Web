@@ -1,20 +1,13 @@
 <?php
-    $json_config = json_decode(file_get_contents(dirname(__FILE__).'/config.json'), true);
+    $config = json_decode(file_get_contents(dirname(__FILE__).'/config.json'), true);
+    if(isset($_GET["debug"]) and $_GET["debug"]==="1"){var_dump($_SERVER);}
 
-    if(in_array($_SERVER['REMOTE_ADDR'], [$json_config["localhost"]])){
+    if(in_array($_SERVER['REMOTE_ADDR'], [$config["REMOTE_ADDR"]])){
         $config = [
-            "host" => $json_config["host"],
-            "dbusername" => $json_config["dbusername"],
-            "dbpassword" => $json_config["dbpassword"]
+            "host" => "localhost",
+            "dbusername" => "root",
+            "dbpassword" => ""
         ];
-        if(isset($_GET["debug"]) and $_GET["debug"]==="1"){echo "localhost";}
-    }else{
-        $config = [
-            "host" => $json_config["localhost-host"],
-            "dbusername" => $json_config["localhost-username"],
-            "dbpassword" => $json_config["localhost-password"]
-        ];
-        if(isset($_GET["debug"]) and $_GET["debug"]==="1"){echo "online";}
     }
 
     function connectDB($dbname, $config) {
