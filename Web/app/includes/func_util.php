@@ -7,14 +7,20 @@
             "dbusername" => $json_config["dbusername"],
             "dbpassword" => $json_config["dbpassword"]
         ];
-        if(isset($_GET["debug"]) and $_GET["debug"]==="1"){echo "localhost";}
+        if(isset($_GET["debug"]) and $_GET["debug"]==="1"){
+			echo "localhost\n<br>";
+			echo $_SERVER;
+		}
     }else{
         $config = [
             "host" => $json_config["localhost-host"],
             "dbusername" => $json_config["localhost-username"],
             "dbpassword" => $json_config["localhost-password"]
         ];
-        if(isset($_GET["debug"]) and $_GET["debug"]==="1"){echo "online";}
+        if(isset($_GET["debug"]) and $_GET["debug"]==="1"){
+			echo "online\n<br>";
+			echo $_SERVER;
+		}
     }
 
     $return_data = [
