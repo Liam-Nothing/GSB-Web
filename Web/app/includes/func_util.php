@@ -9,7 +9,7 @@
         ];
         if(isset($_GET["debug"]) and $_GET["debug"]==="1"){
 			echo "localhost\n<br>";
-			echo $_SERVER;
+			var_dump($_SERVER);
 		}
     }else{
         $config = [
@@ -19,7 +19,7 @@
         ];
         if(isset($_GET["debug"]) and $_GET["debug"]==="1"){
 			echo "online\n<br>";
-			echo $_SERVER;
+			var_dump($_SERVER);
 		}
     }
 
