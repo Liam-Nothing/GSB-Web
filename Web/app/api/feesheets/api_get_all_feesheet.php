@@ -9,21 +9,23 @@
 
         if (!empty($sqlr_rows)) {
             $return_data = array();
-            foreach($sqlr_rows as $row) {
-                $newRow = new stdClass();
-                $newRow->id = $row["id"];
-                $newRow->description = $row["description"];
-                $newRow->fee = $row["fee"];
-                $newRow->add_date = $row["add_date"];
-                $newRow->use_date = $row["use_date"];
-                $newRow->state = $row["state"];
-                $newRow->id_user = $row["id_user"];
-                $newRow->standard_fee = $row["standard_fee"];
-                $newRow->url_pict = $row["url_pict"];
-                $return_data[] = $newRow;
+            $return_data["content"] = array();
+
+                foreach($sqlr_rows as $row) {
+                    $newFeesheet = [];
+                    $newFeesheet["id"] = $row["id"];
+                    $newFeesheet["description"] = $row["description"];
+                    $newFeesheet["fee"] = $row["fee"];
+                    $newFeesheet["add_date"] = $row["add_date"];
+                    $newFeesheet["use_date"] = $row["use_date"];
+                    $newFeesheet["state"] = $row["state"];
+                    $newFeesheet["id_user"] = $row["id_user"];
+                    $newFeesheet["standard_fee"] = $row["standard_fee"];
+                    $newFeesheet["url_pict"] = $row["url_pict"];
+                    array_push($return_data["content"], $newFeesheet);
+                }
                 $return_data["id"] = 1;
                 $return_data["message"] = "Feesheet";
-            }
         }else{
             $return_data["id"] = 2;
             $return_data["message"] = "No feesheet found";
