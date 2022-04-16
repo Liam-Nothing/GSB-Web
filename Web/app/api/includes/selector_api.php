@@ -22,7 +22,7 @@ if (!$error) {
 		case "admin_update_user":
 			require_once(dirname(__FILE__) . "/../users/api_admin_update_user.php");
 			break;
-			//admin_delete_user
+			//admin_disable_user
 			//admin_password_reset
 
 			// Standard feesheets
@@ -40,11 +40,11 @@ if (!$error) {
 		case "user_view_all_feesheets":
 			require_once(dirname(__FILE__) . "/../feesheets/api_get_all_feesheet.php");
 			break;
-		case "admin_view_all_feesheets":
-			require_once(dirname(__FILE__) . "/../feesheets/api_admin_get_feesheet.php");
-			break;
 		case "user_add_feesheets":
 			require_once(dirname(__FILE__) . "/../feesheets/api_add_feesheet.php");
+			break;
+		case "admin_view_all_feesheets":
+			require_once(dirname(__FILE__) . "/../feesheets/api_admin_get_feesheet.php");
 			break;
 			//admin_search_feesheets
 			//admin_view_one_feesheet
