@@ -1,7 +1,7 @@
 //Scroll func
 
-window.onscroll = function() {scrollFunction();ne_loop_view_port();};
-window.onload  = function() {scrollFunction();ne_loop_view_port();};
+window.onscroll = function () { scrollFunction(); ne_loop_view_port(); };
+window.onload = function () { scrollFunction(); ne_loop_view_port(); };
 
 //********************************************************************************//
 
@@ -18,7 +18,7 @@ function scrollFunction() {
 	document.documentElement.style.setProperty('--gototopPR-100', scrolled + "%");
 	if (scrolled == 0) {
 		document.getElementById("header").classList.remove("scroll");
-	}else{
+	} else {
 		document.getElementById("header").classList.add("scroll");
 	}
 }
@@ -39,9 +39,9 @@ function ne_view_port_test(i) {
 	var target_element = document.getElementsByName(ne_element_name)[i];
 	var bounding = target_element.getBoundingClientRect();
 
-	if ((bounding.bottom-(bounding.height)+100) <= (window.innerHeight || document.documentElement.clientHeight)) {
+	if ((bounding.bottom - (bounding.height) + 100) <= (window.innerHeight || document.documentElement.clientHeight)) {
 		target_element.classList.add("ne-transition");
-	} else if ( (bounding.bottom-bounding.height) > (window.innerHeight || document.documentElement.clientHeight))  {
+	} else if ((bounding.bottom - bounding.height) > (window.innerHeight || document.documentElement.clientHeight)) {
 		target_element.classList.remove("ne-transition");
 	}
 }

@@ -1,8 +1,8 @@
 :root {
-    --main-bg-color: #204977;
-    --main-bg-color-dark: #2b63a3;
+	--main-bg-color: #204977;
+	--main-bg-color-dark: #2b63a3;
 }
-  
+
 
 .footer {
 	background-color: var(--main-bg-color);
