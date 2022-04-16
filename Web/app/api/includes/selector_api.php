@@ -22,8 +22,11 @@ if (!$error) {
 		case "admin_update_user":
 			require_once(dirname(__FILE__) . "/../users/api_admin_update_user.php");
 			break;
-			//admin_disable_user
+		case "admin_disable_user":
+			require_once(dirname(__FILE__) . "/../users/api_admin_disable_user.php");
+			break;
 			//admin_password_reset
+			//user_get_informations
 
 			// Standard feesheets
 		case "admin_add_standard_fees":
@@ -46,11 +49,12 @@ if (!$error) {
 		case "admin_view_all_feesheets":
 			require_once(dirname(__FILE__) . "/../feesheets/api_admin_get_feesheet.php");
 			break;
-			//admin_search_feesheets
-			//admin_view_one_feesheet
-			//admin_update_feesheets
-			//admin_update_feesheets_state
-			//admin_delete_feesheets
+			//admin_search_feesheets	//API ? JS		//user
+			//admin_view_one_feesheet	//API ? JS		//user
+			//admin_update_feesheets					//user
+			//admin_update_feesheets_state				//user
+			//admin_delete_feesheets					//user
+			//admin_add_feesheets
 
 		default:
 			$return_data["id"] = 2;
