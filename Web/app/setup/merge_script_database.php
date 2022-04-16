@@ -3,7 +3,7 @@
 require("../includes/func_util.php");
 
 $old_database = connectDB("old_gsb", $config);
-$new_database = connectDB("gsb", $config);
+$new_database = connectDB("nothingefdgsb", $config);
 
 function merge_state()
 {

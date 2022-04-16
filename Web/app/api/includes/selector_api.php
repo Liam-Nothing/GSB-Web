@@ -10,7 +10,7 @@ if (!$error) {
 		case "user_open_session":
 			require_once(dirname(__FILE__) . "/../users/api_session_open.php");
 			break;
-		case "user_lougout_session":
+		case "user_logout_session":
 			require_once(dirname(__FILE__) . "/../users/api_logout.php");
 			break;
 		case "user_logged_session":

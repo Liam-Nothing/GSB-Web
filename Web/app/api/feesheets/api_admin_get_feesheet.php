@@ -23,22 +23,22 @@ if (isset($_SESSION["id"])) {
 			foreach ($sqlr_rows as $row) {
 				$newFeesheet = [];
 				$newFeesheet["id"] = $row["id"];
-				$newFeesheet["description"] = $row["description"];
+				$newFeesheet["description"] = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '?', $row["description"]);
 				$newFeesheet["fee"] = $row["fee"];
 				$newFeesheet["add_date"] = $row["add_date"];
 				$newFeesheet["use_date"] = $row["use_date"];
 				$newFeesheet["state"] = $row["state"];
 				$newFeesheet["id_user"] = $row["id_user"];
-				$newFeesheet["username"] = $row["username"];
-				$newFeesheet["email"] = $row["email"];
-				$newFeesheet["first_name"] = $row["first_name"];
-				$newFeesheet["last_name"] = $row["last_name"];
+				$newFeesheet["username"] = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '?', $row["username"]);
+				$newFeesheet["email"] = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '?', $row["email"]);
+				$newFeesheet["first_name"] = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '?', $row["first_name"]);
+				$newFeesheet["last_name"] = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '?', $row["last_name"]);
 				$newFeesheet["standard_fee"] = $row["standard_fee"];
 				$newFeesheet["url_pict"] = $row["url_pict"];
-				$newFeesheet["state_label"] = $row["state_label"];
-				$newFeesheet["standard_fee_label"] = $row["standard_fee_label"];
+				// Replace unicode char
+				$newFeesheet["state_label"] = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '?', $row["state_label"]);
+				$newFeesheet["standard_fee_label"] = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '?', $row["standard_fee_label"]);
 				$newFeesheet["role_label"] = $row["role_label"];
-				// $newFeesheet["fullrow"] = $row;
 				array_push($return_data["content"], $newFeesheet);
 			}
 			$return_data["id"] = 1;
