@@ -25,8 +25,8 @@ if (!$error) {
 		case "admin_disable_user":
 			require_once(dirname(__FILE__) . "/../users/api_admin_disable_user.php");
 			break;
-			//admin_password_reset
-			//user_get_informations
+			//admin_password_reset -> today date ? gsbbest
+			//user_get_informations -> no important
 
 			// Standard feesheets
 		case "admin_add_standard_fees":
