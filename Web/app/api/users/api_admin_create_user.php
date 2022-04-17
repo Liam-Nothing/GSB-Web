@@ -59,7 +59,7 @@ if (isset($_SESSION["id"])) {
 				$return_data["message"] = "Error!";
 			}
 		}
-	} elseif ($_SESSION["id_role"] == 3) {
+	} elseif ($_SESSION["id_role"] == 2) {
 		$return_data["id"] = 1;
 		$return_data["message"] = "You are a admin region";
 	} else {
