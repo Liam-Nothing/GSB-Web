@@ -16,19 +16,18 @@ if (!$error) {
 		case "user_logged_session":
 			require_once(dirname(__FILE__) . "/../users/api_logged.php");
 			break;
-		case "admin_create_user": // Admin region + Comptable
+		case "admin_create_user": // Admin region
 			require_once(dirname(__FILE__) . "/../users/api_admin_create_user.php");
 			break;
-		case "admin_update_user": // Admin region + Comptable
+		case "admin_update_user": // Admin region
 			require_once(dirname(__FILE__) . "/../users/api_admin_update_user.php");
 			break;
-		case "admin_disable_user": // Admin region + Comptable
+		case "admin_disable_user": // Admin region
 			require_once(dirname(__FILE__) . "/../users/api_admin_disable_user.php");
 			break;
-		case "admin_password_reset_user": // Admin region + Comptable
+		case "admin_password_reset_user": // Admin region
 			require_once(dirname(__FILE__) . "/../users/api_admin_password_reset_user.php");
 			break;
-			//user_get_informations -> no important
 
 			// Standard feesheets
 		case "admin_add_standard_fees":
@@ -50,6 +49,9 @@ if (!$error) {
 			break;
 		case "admin_view_all_feesheets":
 			require_once(dirname(__FILE__) . "/../feesheets/api_admin_get_feesheet.php");
+			break;
+		case "multi_update_feesheets":
+			require_once(dirname(__FILE__) . "/../feesheets/api_multi_update_feesheets.php");
 			break;
 			//admin_search_feesheets	//API ? JS		//user
 			//admin_view_one_feesheet	//API ? JS		//user

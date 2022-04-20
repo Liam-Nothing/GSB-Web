@@ -13,10 +13,10 @@ if (!(isset($_SESSION["id"]))) {
 		if (!$error) {
 
 			$sqlr = $database->prepare("
-					INSERT INTO `fee_sheet`
-					(standard_fee, description, use_date, fee, id_user, state) 
-					VALUES (:standard_fee, :description, :use_date, :fee, :id_user, :state)
-				"); //url_pict
+				INSERT INTO `fee_sheet`
+				(standard_fee, description, use_date, fee, id_user, state) 
+				VALUES (:standard_fee, :description, :use_date, :fee, :id_user, :state)
+			"); //url_pict
 			$sqlr->bindParam(':standard_fee', $data["standard_fee"]);
 			$sqlr->bindParam(':description', $data["description"]);
 			$sqlr->bindParam(':use_date', $data["use_date"]);
