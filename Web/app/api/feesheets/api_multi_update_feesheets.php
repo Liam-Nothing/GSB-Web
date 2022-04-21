@@ -24,7 +24,7 @@ if (isset($_SESSION["id"])) {
 				$sqlr->bindParam(':use_date', $data["use_date"]);
 				$sqlr->bindParam(':state', $data["state"]);
 
-				if ($sqlr->execute()) {
+				if ($sqlr->execute() && $sqlr->rowCount() > 0) {
 					$return_data["id"] = 1;
 					$return_data["message"] = "Feesheet updated";
 				} else {
@@ -64,7 +64,7 @@ if (isset($_SESSION["id"])) {
 				$sqlr->bindParam(':state', $data["state"]);
 				$sqlr->bindParam(':id_user', $_SESSION["id"]);
 
-				if ($sqlr->execute()) {
+				if ($sqlr->execute() && $sqlr->rowCount() > 0) {
 					$return_data["id"] = 1;
 					$return_data["message"] = "Feesheet updated";
 				} else {
