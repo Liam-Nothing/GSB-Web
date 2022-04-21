@@ -18,7 +18,7 @@ if (isset($_SESSION["id"])) {
 				$sqlr->bindValue(':password', password_hash("gsbbest", PASSWORD_DEFAULT));
 				$sqlr->bindParam(':id_user', $data["id_user"]);
 
-				if ($sqlr->execute()) {
+				if ($sqlr->execute() && $sqlr->rowCount() > 0) {
 					$return_data["id"] = 1;
 					$return_data["message"] = "Password reset";
 				} else {

@@ -12,7 +12,7 @@ if (isset($_SESSION["id"])) {
 						WHERE id = :id
 					");
 				$sqlr->bindParam(':id', $data["standard_id"]);
-				if ($sqlr->execute()) {
+				if ($sqlr->execute() && $sqlr->rowCount() > 0) {
 					$return_data["id"] = 1;
 					$return_data["message"] = "Standard fee removed";
 				} else {

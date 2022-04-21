@@ -19,7 +19,7 @@ if (isset($_SESSION["id"])) {
 				$sqlr->bindParam(':disable', $data["disable"]);
 				$sqlr->bindParam(':id_user', $data["id_user"]);
 
-				if ($sqlr->execute()) {
+				if ($sqlr->execute() && $sqlr->rowCount() > 0) {
 					$return_data["id"] = 1;
 					$return_data["message"] = "User updated";
 				} else {

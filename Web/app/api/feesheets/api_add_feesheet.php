@@ -28,7 +28,7 @@ if (!(isset($_SESSION["id"]))) {
 				$sqlr->bindValue(':state', 2);
 			}
 			// $sqlr->bindParam(':url_pict', $data["url_pict"]);
-			if ($sqlr->execute()) {
+			if ($sqlr->execute() && $sqlr->rowCount() > 0) {
 				$return_data["id"] = 1;
 				$return_data["message"] = "Feesheet send";
 			} else {
