@@ -41,17 +41,20 @@ if (!$error) {
 			break;
 
 			// Feesheets
-		case "user_view_all_feesheets":
-			require_once(dirname(__FILE__) . "/../feesheets/api_get_all_feesheet.php");
-			break;
+			// case "user_view_all_feesheets":
+			// 	require_once(dirname(__FILE__) . "/../feesheets/api_get_all_feesheet.php");
+			// 	break;
 		case "user_add_feesheets":
 			require_once(dirname(__FILE__) . "/../feesheets/api_add_feesheet.php");
 			break;
-		case "admin_view_all_feesheets":
-			require_once(dirname(__FILE__) . "/../feesheets/api_admin_get_feesheet.php");
-			break;
+			// case "admin_view_all_feesheets":
+			// 	require_once(dirname(__FILE__) . "/../feesheets/api_admin_get_feesheet.php");
+			// 	break;
 		case "multi_update_feesheets":
 			require_once(dirname(__FILE__) . "/../feesheets/api_multi_update_feesheets.php");
+			break;
+		case "multi_view_all_feeesheets":
+			require_once(dirname(__FILE__) . "/../feesheets/api_multi_view_all_feeesheets.php");
 			break;
 			//admin_search_feesheets ->
 			//admin_view_one_feesheet	//API ? JS		//user

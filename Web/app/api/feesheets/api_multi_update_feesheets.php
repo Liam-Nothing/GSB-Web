@@ -2,6 +2,7 @@
 
 if (isset($_SESSION["id"])) {
 	if ($_SESSION["id_role"] == 3 or $_SESSION["id_role"] == 1) {
+
 		if (isset($data_from_client)) {
 			$data = array(["id_feesheet", 5, 0], ["description", 150, 0], ["fee", 10, 0], ["standard_fee", 3, 0], ["use_date", 20, 0], ["state", 1, 0]);
 			$data = data_security($data);
