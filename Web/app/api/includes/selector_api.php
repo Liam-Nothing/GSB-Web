@@ -53,7 +53,7 @@ if (!$error) {
 		case "multi_update_feesheets":
 			require_once(dirname(__FILE__) . "/../feesheets/api_multi_update_feesheets.php");
 			break;
-			//admin_search_feesheets	//API ? JS		//user
+			//admin_search_feesheets ->
 			//admin_view_one_feesheet	//API ? JS		//user
 			//admin_update_feesheets					//user
 			//admin_update_feesheets_state				//user
