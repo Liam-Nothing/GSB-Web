@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_SESSION["id"])) {
-	if ($_SESSION["id_role"] == 3 or $_SESSION["id_role"] == 2 or $_SESSION["id_role"] == 1) { # Ok admin, comptable, admin_region
+	if ($_SESSION["id_role"] == 3 or $_SESSION["id_role"] == 2 or $_SESSION["id_role"] == 1) {
 		if (isset($data_from_client)) {
 			$data = array(["standard_id", 5, 1]);
 			$data = data_security($data);

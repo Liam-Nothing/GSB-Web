@@ -1,16 +1,16 @@
 <?php
 
 if (isset($_SESSION["id"])) {
-	if ($_SESSION["id_role"] == 3 or $_SESSION["id_role"] == 2 or $_SESSION["id_role"] == 1) { # Ok admin, comptable, admin_region
+	if ($_SESSION["id_role"] == 3 or $_SESSION["id_role"] == 2 or $_SESSION["id_role"] == 1) {
 		if (isset($data_from_client)) {
 			$data = array(["label", 50, 1], ["fee", 10, 0]);
 			$data = data_security($data);
 			if (!$error) {
 				$sqlr = $database->prepare("
-						INSERT INTO `standard_fee`
-						(label, fee) 
-						VALUES (:label, :fee)
-					");
+					INSERT INTO `standard_fee`
+					(label, fee) 
+					VALUES (:label, :fee)
+				");
 				$sqlr->bindParam(':label', $data["label"]);
 				$sqlr->bindParam(':fee', $data["fee"]);
 				if ($sqlr->execute() && $sqlr->rowCount() > 0) {
