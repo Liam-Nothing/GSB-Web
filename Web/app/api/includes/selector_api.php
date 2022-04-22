@@ -16,16 +16,16 @@ if (!$error) {
 		case "user_logged_session":
 			require_once(dirname(__FILE__) . "/../users/api_logged.php");
 			break;
-		case "admin_create_user": // Admin region
+		case "admin_create_user":
 			require_once(dirname(__FILE__) . "/../users/api_admin_create_user.php");
 			break;
-		case "admin_update_user": // Admin region
+		case "admin_update_user":
 			require_once(dirname(__FILE__) . "/../users/api_admin_update_user.php");
 			break;
-		case "admin_disable_user": // Admin region
+		case "admin_disable_user":
 			require_once(dirname(__FILE__) . "/../users/api_admin_disable_user.php");
 			break;
-		case "admin_password_reset_user": // Admin region
+		case "admin_password_reset_user":
 			require_once(dirname(__FILE__) . "/../users/api_admin_password_reset_user.php");
 			break;
 
@@ -33,7 +33,7 @@ if (!$error) {
 		case "admin_add_standard_fees":
 			require_once(dirname(__FILE__) . "/../standard_fees/api_add_standards_fees.php");
 			break;
-		case "user_get_standard_fees":
+		case "all_get_standard_fees":
 			require_once(dirname(__FILE__) . "/../standard_fees/api_get_standards_fees.php");
 			break;
 		case "admin_remove_standard_fees":
@@ -41,8 +41,8 @@ if (!$error) {
 			break;
 
 			// Feesheets
-		case "user_add_feesheets": //admin_add_feesheets
-			require_once(dirname(__FILE__) . "/../feesheets/api_add_feesheet.php");
+		case "multi_add_feesheets":
+			require_once(dirname(__FILE__) . "/../feesheets/api_multi_add_feesheet.php");
 			break;
 		case "multi_update_feesheets":
 			require_once(dirname(__FILE__) . "/../feesheets/api_multi_update_feesheets.php");
