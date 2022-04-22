@@ -10,6 +10,15 @@ if (!empty($_GET)) {
 	if (isset($_GET["g"])) {
 		header("Location: https://github.com/search?q=user%3ALiam-Nothing+GSB");
 	}
+	if (isset($_GET["gWeb"])) {
+		header("Location: https://github.com/Liam-Nothing/GSB-Web");
+	}
+	if (isset($_GET["gMobile"])) {
+		header("Location: https://github.com/Liam-Nothing/GSB-Mobile");
+	}
+	if (isset($_GET["gAngular"])) {
+		header("Location: https://github.com/Liam-Nothing/GSB-Angular");
+	}
 }
 
 ?>
