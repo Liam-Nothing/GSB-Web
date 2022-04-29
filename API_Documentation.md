@@ -1,10 +1,22 @@
 # API Documentation for GSB Project (gsb.best)
 
 ## 1. How to select API function
-To select API function you need to target `\app\api\api.php` with a POST request with json format. Use `api` like key and the case you want like value exemple `user_open_session` if you want to open a session. In this API user can have 4 type of right is Admin, Admin_Region, Comptable and User. Some fuctions need a special right to be call.
+To select API function you need to target `\app\api\index.php` with a POST request with json format. Use `api` like key and the case you want like value exemple `user_open_session` if you want to open a session. In this API user can have 3 type of right is Admin, Comptable and User. Some fuctions need a special right to be call.
 
 ## 2. What is inside the PHP session
-Inside we have 3 elements the `id` of the user a int, `username` a string and `id_role`. `id _role` mean the right level like admin or user, is compose by one int bettween `0-3`.
+Inside the PHP session we have 3 elements :
+- `id` : int
+  can have 3 value :
+    - `0` : None (Error)
+    - `1` : Success
+    - `2` : Error
+- `username` : sting
+- `id_role` : int
+  can have 3 value :
+    - `0` : utilisateur
+    - `1` : comptable
+    - `3` : admin
+
 
 ## 3. What is the functions of API
 

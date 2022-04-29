@@ -28,6 +28,9 @@ if (!$error) {
 		case "admin_password_reset_user":
 			require_once(dirname(__FILE__) . "/../users/api_admin_password_reset_user.php");
 			break;
+		case "admin_list_user":
+			require_once(dirname(__FILE__) . "/../users/api_view_all_user.php");
+			break;
 
 			// Standard feesheets
 		case "all_get_standard_fees":
@@ -47,8 +50,8 @@ if (!$error) {
 		case "multi_update_feesheets":
 			require_once(dirname(__FILE__) . "/../feesheets/api_multi_update_feesheets.php");
 			break;
-		case "multi_view_all_feeesheets":
-			require_once(dirname(__FILE__) . "/../feesheets/api_multi_view_all_feeesheets.php");
+		case "multi_view_all_feesheets":
+			require_once(dirname(__FILE__) . "/../feesheets/api_multi_view_all_feesheets.php");
 			break;
 		case "multi_delete_feesheets":
 			require_once(dirname(__FILE__) . "/../feesheets/api_multi_delete_feesheets.php");
