@@ -19,6 +19,9 @@ if (!empty($_GET)) {
 	if (isset($_GET["gAngular"])) {
 		header("Location: https://github.com/Liam-Nothing/GSB-Angular");
 	}
+	if (isset($_GET["cdc"])) {
+		header("Location: ");
+	}
 }
 
 ?>
