@@ -22,6 +22,24 @@ if (!empty($_GET)) {
 	if (isset($_GET["cdc"])) {
 		header("Location: ");
 	}
+	if (isset($_GET["DocUserWeb"])) {
+		header("Location: ");
+	}
+	if (isset($_GET["DocWeb"])) {
+		header("Location: ");
+	}
+	if (isset($_GET["DocAngular"])) {
+		header("Location: ");
+	}
+	if (isset($_GET["DocUserMobile"])) {
+		header("Location: ");
+	}
+	if (isset($_GET["DocMobile"])) {
+		header("Location: ");
+	}
+	if (isset($_GET["AppComp"])) {
+		header("Location: ");
+	}
 }
 
 ?>
