@@ -12,7 +12,7 @@ if (isset($_SESSION["id"])) {
 			if ($row["deleted"] == 0) {
 				$newRow = new stdClass();
 				$newRow->id = $row["id"];
-				$newRow->label = $row["label"];
+				$newRow->label = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '?', $row["label"]);
 				$newRow->fee = $row["fee"];
 				$return_data[] = $newRow;
 			}
