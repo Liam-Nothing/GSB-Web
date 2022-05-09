@@ -8,15 +8,19 @@ if (isset($_SESSION["id"])) {
 
 	if (!empty($sqlr_rows)) {
 		$return_data = array();
+		$return_data["content"] = array();
+
 		foreach ($sqlr_rows as $row) {
 			if ($row["deleted"] == 0) {
-				$newRow = new stdClass();
-				$newRow->id = $row["id"];
-				$newRow->label = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '?', $row["label"]);
-				$newRow->fee = $row["fee"];
-				$return_data[] = $newRow;
+				$newFeesheet = [];
+				$newFeesheet["id"] = $row["id"];
+				$newFeesheet["fee"] = $row["fee"];
+				$newFeesheet["label"] = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '?', $row["label"]);
+				array_push($return_data["content"], $newFeesheet);
 			}
 		}
+
+
 		$return_data["id"] = 1;
 		$return_data["message"] = "Standards fees";
 	} else {
