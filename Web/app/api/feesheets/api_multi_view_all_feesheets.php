@@ -4,7 +4,7 @@ if (isset($_SESSION["id"])) {
 	if ($_SESSION["id_role"] == 3 or $_SESSION["id_role"] == 1) {
 
 		$sqlr = $database->query("
-			SELECT *, state.label as state_label, standard_fee.label as standard_fee_label, role.label as role_label, fee_sheet.id as fee_sheet_id
+			SELECT *, state.label as state_label, standard_fee.label as standard_fee_label, role.label as role_label, fee_sheet.id as fee_sheet_id, fee_sheet.fee as fee
 			FROM fee_sheet INNER JOIN standard_fee
 			ON fee_sheet.standard_fee = standard_fee.id
 			INNER JOIN state
@@ -53,7 +53,7 @@ if (isset($_SESSION["id"])) {
 		$return_data["message"] = "You are a admin region";
 	} else {
 		$sqlr = $database->prepare("
-		SELECT *, state.label as state_label, standard_fee.label as standard_fee_label, role.label as role_label, fee_sheet.id as fee_sheet_id
+		SELECT *, state.label as state_label, standard_fee.label as standard_fee_label, role.label as role_label, fee_sheet.id as fee_sheet_id, fee_sheet.fee as fee
 		FROM fee_sheet INNER JOIN standard_fee
 		ON fee_sheet.standard_fee = standard_fee.id
 		INNER JOIN state

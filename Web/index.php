@@ -26,7 +26,7 @@ if (!empty($_GET)) {
 		header("Location: ");
 	}
 	if (isset($_GET["DocWeb"])) {
-		header("Location: ");
+		header("Location: https://github.com/Liam-Nothing/GSB-Web/blob/main/API_Documentation.md");
 	}
 	if (isset($_GET["DocAngular"])) {
 		header("Location: ");
