@@ -42,7 +42,8 @@ if (isset($_SESSION["id"])) {
 					WHERE id = :id
 					AND id_user = :id_user
 				");
-				$sqlr->bindParam(':id', $data["id_feesheet"]);;
+				$sqlr->bindParam(':id', $data["id_feesheet"]);
+				$sqlr->bindParam(':id_user', $_SESSION["id"]);
 
 				if ($sqlr->execute() && $sqlr->rowCount() > 0) {
 					$return_data["id"] = 1;
