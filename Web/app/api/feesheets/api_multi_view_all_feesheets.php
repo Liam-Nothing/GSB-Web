@@ -12,7 +12,8 @@ if (isset($_SESSION["id"])) {
 			INNER JOIN users
 			ON fee_sheet.id_user = users.id
 			INNER JOIN role
-			ON users.id_role = role.id;
+			ON users.id_role = role.id
+			ORDER BY fee_sheet_id DESC;
 			");
 		$sqlr_rows = $sqlr->fetchAll();
 
@@ -62,7 +63,8 @@ if (isset($_SESSION["id"])) {
 		ON fee_sheet.id_user = users.id
 		INNER JOIN role
 		ON users.id_role = role.id
-		WHERE id_user = :id_user;
+		WHERE id_user = :id_user
+		ORDER BY fee_sheet_id DESC;
 		");
 		$sqlr->bindParam(':id_user', $_SESSION["id"]);
 		$sqlr->execute();
